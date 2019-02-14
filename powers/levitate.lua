@@ -24,7 +24,7 @@ function Levitate:update(dt)
   self.ability:update(dt)
   
   if self.ability:isActive() then
-    self.owner.body:setGravityScale(Firewalk.gravity)
+    self.owner.body:setGravityScale(Levitate.gravity)
   else
     self.owner.body:setGravityScale(1.0)
   end

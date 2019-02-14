@@ -1,8 +1,10 @@
 require "creature"
 require "ability"
 
-require "elements/fire"
+
 require "elements/air"
+require "elements/fire"
+require "elements/ice"
 
 Player = {}
 Player.__index = 
@@ -22,14 +24,21 @@ function Player:_init(world,x,y)
   self.runforce = 7000
   self.jump = Ability(0.5)
   
+  self.fixture:setUserData(self)
+  self.fixture:setFilterData(1, 65535, -1)
+  
   self.elements = {
     fire = Fire(self),
     earth = Fire(self), --FIXME
-    ice = Fire(self), --FIXME
+    ice = Ice(self), --FIXME
     air = Air(self), --FIXME
   }
   
   self.element = "fire"
+end
+
+function Player:beginContact(fixture, other, collision)
+
 end
 
 function Player:update(dt)

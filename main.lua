@@ -4,6 +4,7 @@ local sti = require "STI/sti"
 require "camera"
 require "player"
 require "hud"
+require "collisions"
 
 local game = {}
 game.camera = Camera()
@@ -19,6 +20,8 @@ function love.load()
   
   love.physics.setMeter(32) --the height of a meter our worlds will be 64px
   game.world = love.physics.newWorld(0, 9.81 * 32, true)
+  
+  game.world:setCallbacks(beginContact, endContact, preSolve, postSolve)
 
   game.map = sti("map01.lua", { "box2d" })
   game.map:box2d_init(game.world)
