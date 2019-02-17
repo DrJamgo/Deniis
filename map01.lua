@@ -8,7 +8,7 @@ return {
   height = 16,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 4,
+  nextlayerid = 5,
   nextobjectid = 17,
   properties = {},
   tilesets = {
@@ -80,7 +80,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["friction"] = 0.5
+            ["friction"] = 0.2
           }
         },
         {
@@ -95,7 +95,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["friction"] = 0.5
+            ["friction"] = 0.2
           }
         },
         {
@@ -217,6 +217,17 @@ return {
           properties = {}
         }
       }
+    },
+    {
+      type = "imagelayer",
+      id = 4,
+      name = "Image Layer 1",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      image = "map01.png",
+      properties = {}
     },
     {
       type = "tilelayer",

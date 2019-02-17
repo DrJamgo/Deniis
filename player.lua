@@ -35,6 +35,9 @@ function Player:_init(world,x,y)
   }
   
   self.element = "fire"
+  
+  self.image = love.graphics.newImage("Deniis.png")
+
 end
 
 function Player:beginContact(fixture, other, collision)
@@ -93,9 +96,9 @@ function Player:update(dt)
 end
 
 function Player:draw()
-  --Creature.draw(self)
-  love.graphics.print(string.format("mass:%0.2f", self.body:getMass()), self.body:getPosition())
-  
+  --[[Creature.draw(self)
+  love.graphics.print(string.format("mass:%0.2f", self.body:getMass()), self.body:getPosition())]]--
+  love.graphics.draw(self.image, math.floor(self.body:getX()-15.5), math.floor(self.body:getY()-12.5))
 end
 
 function Player:mousepressed(dx,dy,button)

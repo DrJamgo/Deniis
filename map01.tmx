@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="32" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="17">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="32" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="17">
  <tileset firstgid="1" source="tilea4.tsx"/>
  <objectgroup color="#000000" id="1" name="obstacle" visible="0">
   <properties>
@@ -12,12 +12,12 @@
   </object>
   <object id="3" x="16.5" y="208.5" width="111.5" height="15">
    <properties>
-    <property name="friction" type="float" value="0.5"/>
+    <property name="friction" type="float" value="0.2"/>
    </properties>
   </object>
   <object id="4" x="162" y="160.5" width="93" height="32.5">
    <properties>
-    <property name="friction" type="float" value="0.5"/>
+    <property name="friction" type="float" value="0.2"/>
    </properties>
   </object>
   <object id="5" x="250.5" y="165">
@@ -55,6 +55,9 @@
  <objectgroup id="3" name="spawn">
   <object id="6" name="player" x="30.6667" y="37.3333" width="24" height="22"/>
  </objectgroup>
+ <imagelayer id="4" name="Image Layer 1">
+  <image source="map01.png" width="512" height="256"/>
+ </imagelayer>
  <layer id="2" name="Tile Layer 1" width="32" height="16" visible="0">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

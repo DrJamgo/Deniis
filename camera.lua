@@ -10,7 +10,6 @@ setmetatable(Camera, {
 
 function Camera:_init()
   self.scaleX, self.scaleY = 1,1
-  
 end
 
 function Camera:setFOV(hfov, vfov)
@@ -26,8 +25,8 @@ end
 function Camera:setPosition(x, y)
   self.x = x
   self.y = y
-  self.shiftX = -x + love.graphics.getWidth()/2 / self.scaleX
-  self.shiftY = -y + love.graphics.getHeight()/2 / self.scaleY
+  self.shiftX = math.floor(-x+0.5) + love.graphics.getWidth()/2 / self.scaleX
+  self.shiftY = math.floor(-y+0.5) + love.graphics.getHeight()/2 / self.scaleY
 end
 
 function Camera:follow(object)

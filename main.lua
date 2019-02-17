@@ -7,15 +7,16 @@ require "hud"
 require "collisions"
 
 local game = {}
-game.camera = Camera()
-game.hud = HUD(game)
+
 game.world = nil
+game.camera = Camera()
 game.map = nil
 game.player = nil
+game.hud = HUD(game)
 
 function love.load()
   --initial graphics setup
-  love.graphics.setBackgroundColor(0.0, 0.0, 0.0) --set the background color to a nice blue
+  love.graphics.setBackgroundColor(0.1, 0.1, 0.1) --set the background color to a nice blue
   love.window.setMode(640, 640) --set the window dimensions to 650 by 650 with no fullscreen, vsync on, and no antialiasing
   
   love.physics.setMeter(32) --the height of a meter our worlds will be 64px
@@ -33,16 +34,20 @@ function love.load()
     end
   end
 
+  game.map.layers["spawn"].draw = function(self)
+    game.player:draw()
+  end
+
   game.camera:follow(game.player)
-  game.camera:setScale(2.0)
+  game.camera:setScale(4.0)
 end
 
 function love.update(dt)
-  for k,v in pairs(game) do
-    if v.update then
-      v:update(dt)
-    end
-  end
+  game.player:update(dt)
+  game.world:update(dt)
+  game.map:update(dt)
+  game.camera:update(dt)
+  game.hud:update(dt)
 end
 
 function love.draw()
@@ -51,7 +56,8 @@ function love.draw()
   love.graphics.setColor(255, 255, 255)
   
 	game.map:draw(camera.shiftX, camera.shiftY, camera.scaleX, camera.scaleY)
-
+  
+--[[
   bodies = game.world:getBodies()
   for k,b in pairs(bodies) do
     local fixtures = b:getFixtures( )
@@ -83,8 +89,7 @@ function love.draw()
       love.graphics.line(x1, y1, x1 + nx * 6, y1 + ny*6)
     end
   end
-  
-  game.player:draw()
+  ]]--
   game.hud:draw()
   
   love.graphics.replaceTransform(camera:getTransform())
