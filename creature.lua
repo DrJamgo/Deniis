@@ -12,11 +12,13 @@ function Creature:_init(world,x,y,w,h,m)
   self.body = love.physics.newBody(world, x, y, "dynamic" )
   self.body:setFixedRotation(true)
   self.body:setLinearDamping(0.2)
-  self.shape = love.physics.newRectangleShape(w or 16,h or 32)
+  self.shape = love.physics.newRectangleShape(w or 12,h or 32)
   self.fixture = love.physics.newFixture( self.body, self.shape, 1 )
   self.fixture:setRestitution(0)
   self.fixture:setFriction(0.05)
   self.body:setMass(m or 80)
+  
+  --self.body:setFixedRotation(false)
 end
 
 function Creature:updateContacts(dt)
@@ -46,6 +48,8 @@ end
 
 function Creature:update(dt)
   self:updateContacts(dt)
+  --self.body:setAngle(0)
+  --self.body:setAngularVelocity(0)
 end
 
 function Creature:draw()

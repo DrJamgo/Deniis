@@ -8,7 +8,7 @@ return {
   height = 16,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 5,
+  nextlayerid = 6,
   nextobjectid = 17,
   properties = {},
   tilesets = {
@@ -213,7 +213,7 @@ return {
           width = 24,
           height = 22,
           rotation = 0,
-          visible = true,
+          visible = false,
           properties = {}
         }
       }

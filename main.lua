@@ -14,6 +14,8 @@ game.map = nil
 game.player = nil
 game.hud = HUD(game)
 
+local box2d_draw = false
+
 function love.load()
   --initial graphics setup
   love.graphics.setBackgroundColor(0.1, 0.1, 0.1) --set the background color to a nice blue
@@ -31,11 +33,16 @@ function love.load()
   for k, object in pairs(spawnlayer.objects) do
     if object.name == "player" then
       game.player = Player(game.world, object.x + object.width / 2, object.y + object.height / 2)
+      spawnlayer.objects[#spawnlayer.objects+1] = game.player
     end
   end
 
   game.map.layers["spawn"].draw = function(self)
-    game.player:draw()
+    for k, object in pairs(self.objects) do
+      if object.draw then
+        object:draw()
+      end
+    end
   end
 
   game.camera:follow(game.player)
@@ -50,6 +57,10 @@ function love.update(dt)
   game.hud:update(dt)
 end
 
+function love.keypressed( key, scancode, isrepeat )
+  if scancode == "b" then box2d_draw = not box2d_draw end
+end
+
 function love.draw()
   local camera = game.camera
   love.graphics.replaceTransform(camera:getTransform())
@@ -57,39 +68,42 @@ function love.draw()
   
 	game.map:draw(camera.shiftX, camera.shiftY, camera.scaleX, camera.scaleY)
   
---[[
-  bodies = game.world:getBodies()
-  for k,b in pairs(bodies) do
-    local fixtures = b:getFixtures( )
-    for k2, f in pairs(fixtures) do
-      if f == game.player.groundFixture then
-        love.graphics.setColor(255, 0, 0)
-      else
-        love.graphics.setColor(255, 255, 255)
-      end
-      
-      local s = f:getShape( )
-      if s.getPoints then
-        love.graphics.polygon("line", b:getWorldPoints(s:getPoints()))
-      elseif s:getType() == "circle" then
-        love.graphics.circle("line", b:getX(), b:getY(), s:getRadius())
-      end
-    end
-  end
   
-  local contacts = game.world:getContacts()
-  love.graphics.setColor(255, 0, 0)
-  local contact = false
-  for k,v in pairs(contacts) do
-    local x1, y1, x2, y2 = v:getPositions()
-    local f1, f2 = v:getFixtures()
-    if x1 and y1 then
-      love.graphics.circle( "line", x1, y1, 1.5 )
-      nx, ny = v:getNormal()
-      love.graphics.line(x1, y1, x1 + nx * 6, y1 + ny*6)
+  if box2d_draw then
+
+    bodies = game.world:getBodies()
+    for k,b in pairs(bodies) do
+      local fixtures = b:getFixtures( )
+      for k2, f in pairs(fixtures) do
+        if f == game.player.groundFixture then
+          love.graphics.setColor(255, 0, 0)
+        else
+          love.graphics.setColor(255, 255, 255)
+        end
+        
+        local s = f:getShape( )
+        if s.getPoints then
+          love.graphics.polygon("line", b:getWorldPoints(s:getPoints()))
+        elseif s:getType() == "circle" then
+          love.graphics.circle("line", b:getX(), b:getY(), s:getRadius())
+        end
+      end
+    end
+    
+    local contacts = game.world:getContacts()
+    love.graphics.setColor(255, 0, 0)
+    local contact = false
+    for k,v in pairs(contacts) do
+      local x1, y1, x2, y2 = v:getPositions()
+      local f1, f2 = v:getFixtures()
+      if x1 and y1 then
+        love.graphics.circle( "line", x1, y1, 1.5 )
+        nx, ny = v:getNormal()
+        love.graphics.line(x1, y1, x1 + nx * 6, y1 + ny*6)
+      end
     end
   end
-  ]]--
+
   game.hud:draw()
   
   love.graphics.replaceTransform(camera:getTransform())

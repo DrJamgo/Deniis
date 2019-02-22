@@ -2,6 +2,9 @@
 A 2D action plattformer game empowerng the player with the four elements.
 ![Unable to load File](screenshot.png?raw=true "Screenshot")
 
+This is Deniis
+![Unable to load File](Deniis.gif?raw=true "Deniis first animation")
+
 ## The Enemies
 TODO
 
