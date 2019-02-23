@@ -20,7 +20,7 @@ local pause = false
 
 function love.load()
   --initial graphics setup
-  love.graphics.setBackgroundColor(0.1, 0.1, 0.1) --set the background color to a nice blue
+  love.graphics.setBackgroundColor(0.6, 0.5, 0.5) --set the background color to a nice blue
   love.window.setMode(640, 640) --set the window dimensions to 650 by 650 with no fullscreen, vsync on, and no antialiasing
   
   love.physics.setMeter(32) --the height of a meter our worlds will be 64px

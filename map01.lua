@@ -8,8 +8,9 @@ return {
   height = 16,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 8,
-  nextobjectid = 17,
+  nextlayerid = 10,
+  nextobjectid = 18,
+  backgroundcolor = { 0, 0, 0 },
   properties = {},
   tilesets = {
     {
@@ -48,7 +49,7 @@ return {
       opacity = 1,
       offsetx = 0.5,
       offsety = 0.5,
-      image = "assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-middle-trees.png",
+      image = "assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-back-trees.png",
       properties = {
         ["offsetx"] = 0.9,
         ["offsety"] = 0.9
@@ -56,8 +57,22 @@ return {
     },
     {
       type = "imagelayer",
+      id = 8,
+      name = "background2",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      image = "assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-middle-trees.png",
+      properties = {
+        ["offsetx"] = 0.85,
+        ["offsety"] = 0.85
+      }
+    },
+    {
+      type = "imagelayer",
       id = 7,
-      name = "midle",
+      name = "front",
       visible = true,
       opacity = 1,
       offsetx = 0.5,
@@ -72,7 +87,7 @@ return {
       type = "objectgroup",
       id = 1,
       name = "obstacle",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -101,8 +116,8 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 16.5,
-          y = 208.5,
+          x = 0.5,
+          y = 192.5,
           width = 111.5,
           height = 15,
           rotation = 0,
@@ -116,8 +131,8 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 162,
-          y = 160.5,
+          x = 163.022,
+          y = 160.033,
           width = 93,
           height = 32.5,
           rotation = 0,
@@ -138,15 +153,15 @@ return {
           rotation = 0,
           visible = true,
           polygon = {
-            { x = 0, y = 0 },
-            { x = 31.5, y = -4 },
+            { x = 5.66667, y = 58.3333 },
+            { x = 5.54444, y = -4.97778 },
             { x = 59.5, y = -13 },
             { x = 100.5, y = -35.5 },
             { x = 133, y = -62.5 },
-            { x = 148.5, y = -98 },
-            { x = 158.5, y = -126 },
+            { x = 147.833, y = -85.3333 },
+            { x = 169.833, y = -110.333 },
             { x = 228, y = -126 },
-            { x = 217.5, y = 41.5 }
+            { x = 228.833, y = 59.1667 }
           },
           properties = {}
         },
@@ -160,7 +175,7 @@ return {
           width = 11,
           height = 9.5,
           rotation = 0,
-          visible = true,
+          visible = false,
           properties = {
             ["density"] = 1000,
             ["dynamic"] = true,
@@ -177,7 +192,7 @@ return {
           width = 10,
           height = 17,
           rotation = 0,
-          visible = true,
+          visible = false,
           properties = {
             ["density"] = 1000,
             ["dynamic"] = true,
@@ -194,7 +209,7 @@ return {
           width = 8,
           height = 8,
           rotation = 0,
-          visible = true,
+          visible = false,
           properties = {
             ["density"] = 1000,
             ["dynamic"] = true,
@@ -211,26 +226,30 @@ return {
           width = 11,
           height = 13,
           rotation = 0,
-          visible = true,
+          visible = false,
           properties = {
             ["categories"] = 2,
             ["density"] = 1000,
             ["dynamic"] = true,
             ["friction"] = 1
           }
+        },
+        {
+          id = 17,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0.833333,
+          y = 63.75,
+          width = 31.3333,
+          height = 130.167,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["friction"] = 0.2
+          }
         }
       }
-    },
-    {
-      type = "imagelayer",
-      id = 4,
-      name = "Image Layer 1",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      image = "map01.png",
-      properties = {}
     },
     {
       type = "objectgroup",
@@ -248,48 +267,26 @@ return {
           name = "player",
           type = "",
           shape = "rectangle",
-          x = 30.6667,
-          y = 37.3333,
+          x = 65.1667,
+          y = 96.8333,
           width = 24,
           height = 22,
           rotation = 0,
-          visible = false,
+          visible = true,
           properties = {}
         }
       }
     },
     {
-      type = "tilelayer",
-      id = 2,
-      name = "Tile Layer 1",
-      x = 0,
-      y = 0,
-      width = 32,
-      height = 16,
-      visible = false,
+      type = "imagelayer",
+      id = 9,
+      name = "Image Layer 4",
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      properties = {},
-      encoding = "lua",
-      data = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 65, 66, 67, 66, 66, 68, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 129, 130, 131, 98, 98, 132, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 65, 66, 67, 161, 162, 162, 162, 162, 164, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 65, 66, 67, 66, 66, 67, 129, 130, 131, 193, 226, 227, 226, 226, 196, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 129, 130, 130, 130, 130, 131, 161, 162, 162, 225, 226, 227, 226, 226, 228, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 161, 162, 162, 163, 162, 163, 225, 226, 227, 226, 227, 226, 227, 226, 228, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 257, 258, 259, 258, 258, 259, 259, 258, 259, 258, 259, 258, 259, 258, 260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 289, 290, 291, 290, 290, 291, 291, 290, 291, 290, 290, 291, 290, 291, 292, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-      }
+      image = "map01.png",
+      properties = {}
     }
   }
 }
