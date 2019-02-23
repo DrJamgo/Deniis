@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="32" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="17">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="32" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="17">
  <tileset firstgid="1" source="tilea4.tsx"/>
+ <imagelayer id="6" name="background" offsetx="0.5" offsety="0.5">
+  <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-middle-trees.png" width="272" height="160"/>
+  <properties>
+   <property name="offsetx" type="float" value="0.9"/>
+   <property name="offsety" type="float" value="0.9"/>
+  </properties>
+ </imagelayer>
+ <imagelayer id="7" name="midle" offsetx="0.5" offsety="0">
+  <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-front-trees.png" width="272" height="160"/>
+  <properties>
+   <property name="offsetx" type="float" value="0.8"/>
+   <property name="offsety" type="float" value="0.8"/>
+  </properties>
+ </imagelayer>
  <objectgroup color="#000000" id="1" name="obstacle">
   <properties>
    <property name="collidable" type="bool" value="true"/>
@@ -53,12 +67,12 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="3" name="spawn">
-  <object id="6" name="player" x="30.6667" y="37.3333" width="24" height="22" visible="0"/>
- </objectgroup>
  <imagelayer id="4" name="Image Layer 1">
   <image source="map01.png" width="512" height="256"/>
  </imagelayer>
+ <objectgroup id="3" name="spawn">
+  <object id="6" name="player" x="30.6667" y="37.3333" width="24" height="22" visible="0"/>
+ </objectgroup>
  <layer id="2" name="Tile Layer 1" width="32" height="16" visible="0">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

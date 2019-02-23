@@ -8,7 +8,7 @@ return {
   height = 16,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 6,
+  nextlayerid = 8,
   nextobjectid = 17,
   properties = {},
   tilesets = {
@@ -40,6 +40,34 @@ return {
     }
   },
   layers = {
+    {
+      type = "imagelayer",
+      id = 6,
+      name = "background",
+      visible = true,
+      opacity = 1,
+      offsetx = 0.5,
+      offsety = 0.5,
+      image = "assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-middle-trees.png",
+      properties = {
+        ["offsetx"] = 0.9,
+        ["offsety"] = 0.9
+      }
+    },
+    {
+      type = "imagelayer",
+      id = 7,
+      name = "midle",
+      visible = true,
+      opacity = 1,
+      offsetx = 0.5,
+      offsety = 0,
+      image = "assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-front-trees.png",
+      properties = {
+        ["offsetx"] = 0.8,
+        ["offsety"] = 0.8
+      }
+    },
     {
       type = "objectgroup",
       id = 1,
@@ -194,6 +222,17 @@ return {
       }
     },
     {
+      type = "imagelayer",
+      id = 4,
+      name = "Image Layer 1",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      image = "map01.png",
+      properties = {}
+    },
+    {
       type = "objectgroup",
       id = 3,
       name = "spawn",
@@ -218,17 +257,6 @@ return {
           properties = {}
         }
       }
-    },
-    {
-      type = "imagelayer",
-      id = 4,
-      name = "Image Layer 1",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      image = "map01.png",
-      properties = {}
     },
     {
       type = "tilelayer",

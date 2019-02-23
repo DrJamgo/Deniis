@@ -55,6 +55,15 @@ function love.update(dt)
   game.world:update(dt)
   game.camera:update(dt)
   game.hud:update(dt)
+  
+  for k, layer in pairs(game.map.layers) do
+    if layer.properties.offsetx then
+      layer.x = layer.properties.offsetx * -game.camera.shiftX + layer.offsetx
+    end
+    if layer.properties.offsety then
+      layer.y = layer.properties.offsety * -game.camera.shiftY + layer.offsety
+    end
+  end
 end
 
 function love.keypressed( key, scancode, isrepeat )
