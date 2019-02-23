@@ -31,30 +31,26 @@ function love.load()
   game.map:box2d_init(game.world)
   
   local spawnlayer = game.map.layers["spawn"]
+  setLayer(spawnlayer)
   for k, object in pairs(spawnlayer.objects) do
     if object.name == "player" then
       game.player = Player(game.world, object.x + object.width / 2, object.y + object.height / 2)
-      spawnlayer.objects[#spawnlayer.objects+1] = game.player
+      --spawnlayer.objects[#spawnlayer.objects+1] = game.player
     end
   end
+  
+  addFixture(game.player.fixture)
 
-  game.map.layers["spawn"].draw = function(self)
-    for k, object in pairs(self.objects) do
-      if object.draw then
-        object:draw()
-      end
-    end
-  end
+  game.map.layers["spawn"].draw = drawFixtures
 
   game.camera:follow(game.player)
   game.camera:setScale(4.0)
 end
 
 function love.update(dt)
-  game.player:update(dt)
   updateFixtures(dt)
-  game.world:update(dt)
   game.map:update(dt)
+  game.world:update(dt)
   game.camera:update(dt)
   game.hud:update(dt)
 end

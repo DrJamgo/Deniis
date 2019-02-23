@@ -1,8 +1,26 @@
-local fixturelist = {}
+local fixturelist
+
+function setLayer(layer)
+  fixturelist = layer.objects
+end
+
+function drawFixtures(self)
+  for k, object in pairs(self.objects) do
+    if object.draw then
+      object:draw()
+    end
+    if object.getUserData then
+      local userdatda = object:getUserData()
+      if userdatda.draw then
+        userdatda:draw()
+      end
+    end
+  end
+end
 
 function updateFixtures(dt)
   for k, fixture in pairs(fixturelist) do  
-    if fixture then
+    if fixture and fixture.getUserData then
       local userdata = fixture:getUserData()
       if userdata and userdata.update then
         userdata:update(dt)

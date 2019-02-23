@@ -51,7 +51,7 @@ function Projectile:update(dt)
     local joint = love.physics.newWeldJoint( self.body, self.glue:getBody(), self.x, self.y, false )
     self.alive = self.decaytime or 0
     self.other = nil
-    self.fixture:setFilterData(1,65535,0)
+    self.fixture:setFilterData(Cat.dynamic, Cat.all, 0)
     --self.body:setFixedRotation(false)
   end
   if self.alive ~= nil then

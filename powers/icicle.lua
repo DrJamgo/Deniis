@@ -51,6 +51,8 @@ IcicleProjectile.impulefactor = 0.4
 IcicleProjectile.sizex = 16
 IcicleProjectile.sizey = 6
 IcicleProjectile.decaytime = 5.0
+IcicleProjectile.image = love.graphics.newImage("assets/Icicle.png")
+
 
 function IcicleProjectile:_init(owner, x, y, dx, dy)
     local shape = love.physics.newPolygonShape(
@@ -61,4 +63,6 @@ function IcicleProjectile:_init(owner, x, y, dx, dy)
   Projectile._init(self, owner, shape, x, y, dx, dy)
 end
 
-
+function IcicleProjectile:draw()
+  love.graphics.draw(self.image, math.floor(self.body:getX()+0.5), math.floor(self.body:getY()+0.5), self.body:getAngle(), 1, 1, 8, 4)
+end
