@@ -21,12 +21,12 @@ function Projectile:_init(owner, shape, x, y, dx, dy)
   self.body:setLinearVelocity(self.velocity * dx, self.velocity * dy)
   
   owner.body:applyLinearImpulse(
-    -self.velocity * dx * self.mass * self.impulefactor,
-    -self.velocity * dy * self.mass * self.impulefactor)
+    -self.velocity * dx * self.mass * (self.impulefactor or 0),
+    -self.velocity * dy * self.mass * (self.impulefactor or 0))
   
   self.fixture:setFriction(0.0)
   self.fixture:setUserData(self)
-  self.fixture:setFilterData(1,65535,-1)
+  self.fixture:setFilterData(Cat.projectile, Cat.all ,owner.fixture:getGroupIndex())
   
   addFixture(self.fixture)
 end
@@ -49,7 +49,7 @@ function Projectile:update(dt)
     destroyFixture(self.fixture)
   elseif self.glue and not self.alive then
     local joint = love.physics.newWeldJoint( self.body, self.glue:getBody(), self.x, self.y, false )
-    self.alive = self.decaytime
+    self.alive = self.decaytime or 0
     self.other = nil
     self.fixture:setFilterData(1,65535,0)
     --self.body:setFixedRotation(false)

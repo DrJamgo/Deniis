@@ -1,4 +1,5 @@
 require "elements/element"
+require "powers/fireball"
 require "powers/firewalk"
 
 Fire = {}
@@ -15,7 +16,7 @@ setmetatable(Fire, {
 function Fire:_init(owner)
 
   self.powers = {
-    fireball = Ability(1),
+    fireball = Fireball(owner),
     duplicate = Ability(1),
     firewalk = Firewalk(owner)
   }

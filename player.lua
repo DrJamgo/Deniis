@@ -1,7 +1,6 @@
 require "creature"
 require "ability"
 
-
 require "elements/air"
 require "elements/fire"
 require "elements/ice"
@@ -19,24 +18,24 @@ setmetatable(Player, {
 })
 
 function Player:_init(world,x,y)
-  Creature._init(self, world, x, y)
+  Creature._init(self, world, x, y, 12, 32, 70)
   self.jumpforce = 10000
   self.runforce = 7000
   self.jump = Ability(0.5)
   
   self.fixture:setUserData(self)
-  self.fixture:setFilterData(1, 65535, -1)
+  self.fixture:setFilterData(Cat.creature, Cat.all, Group.player)
   
   self.elements = {
     fire = Fire(self),
     earth = Fire(self), --FIXME
-    ice = Ice(self), --FIXME
-    air = Air(self), --FIXME
+    ice = Ice(self),
+    air = Air(self),
   }
   
   self.element = "fire"
   
-  self.image = love.graphics.newImage("Deniis.png")
+  self.image = love.graphics.newImage("assets/Deniis.png")
 
 end
 

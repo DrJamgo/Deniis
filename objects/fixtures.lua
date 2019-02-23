@@ -24,3 +24,17 @@ function destroyFixture(fixture)
   fixture:getUserData().destroyme = true
 end
 
+Cat = {}
+Cat.static      = 2^1
+Cat.dynamic     = 2^2
+Cat.projectile  = 2^3
+Cat.creature    = 2^4
+Cat.item        = 2^5
+Cat.all         = 65335
+
+Group = {}
+Group.player    = -1
+Group.enemy     = -2
+
+
+

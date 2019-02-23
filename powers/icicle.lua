@@ -49,7 +49,7 @@ IcicleProjectile.mass = 15
 IcicleProjectile.velocity = 32 * 10
 IcicleProjectile.impulefactor = 0.4
 IcicleProjectile.sizex = 16
-IcicleProjectile.sizey = 4
+IcicleProjectile.sizey = 6
 IcicleProjectile.decaytime = 5.0
 
 function IcicleProjectile:_init(owner, x, y, dx, dy)
@@ -60,9 +60,5 @@ function IcicleProjectile:_init(owner, x, y, dx, dy)
   
   Projectile._init(self, owner, shape, x, y, dx, dy)
 end
-
-
-
-
 
 
