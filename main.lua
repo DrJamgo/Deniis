@@ -16,6 +16,7 @@ game.player = nil
 game.hud = HUD(game)
 
 local box2d_draw = false
+local pause = false
 
 function love.load()
   --initial graphics setup
@@ -48,6 +49,7 @@ function love.load()
 end
 
 function love.update(dt)
+  if pause then return end
   updateFixtures(dt)
   game.map:update(dt)
   game.world:update(dt)
@@ -57,6 +59,7 @@ end
 
 function love.keypressed( key, scancode, isrepeat )
   if scancode == "b" then box2d_draw = not box2d_draw end
+  if scancode == "p" then pause = not pause end
 end
 
 function love.draw()
