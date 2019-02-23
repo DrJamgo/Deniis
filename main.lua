@@ -5,6 +5,7 @@ require "camera"
 require "player"
 require "hud"
 require "collisions"
+require "objects/fixtures"
 
 local game = {}
 
@@ -51,6 +52,7 @@ end
 
 function love.update(dt)
   game.player:update(dt)
+  updateFixtures(dt)
   game.world:update(dt)
   game.map:update(dt)
   game.camera:update(dt)
@@ -75,8 +77,11 @@ function love.draw()
     for k,b in pairs(bodies) do
       local fixtures = b:getFixtures( )
       for k2, f in pairs(fixtures) do
+        local userdata = f:getUserData()
         if f == game.player.groundFixture then
           love.graphics.setColor(255, 0, 0)
+        elseif f:getUserData().update ~= nil then
+          love.graphics.setColor(255, 255, 0)
         else
           love.graphics.setColor(255, 255, 255)
         end

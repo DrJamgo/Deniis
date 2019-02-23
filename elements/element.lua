@@ -24,7 +24,7 @@ end
 
 function Element:deactivate(button)
   local power = self.buttons[button]
-  if power then
+  if power and self.powers[power].deactivate then
     return self.powers[power]:deactivate()
   end
 end
