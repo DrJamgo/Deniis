@@ -20,6 +20,13 @@ end
 function Camera:setScale(scaleX, scaleY)
   self.scaleX = scaleX
   self.scaleY = scaleY or scaleX
+  self.hfov = love.graphics.getWidth() / self.scaleX
+  self.vfov = love.graphics.getHeight() / self.scaleY
+end
+
+function Camera:setWorldSize(width, height)
+  self.worldWidth = width
+  self.worldHeight = height
 end
 
 function Camera:setPosition(x, y)
@@ -27,6 +34,9 @@ function Camera:setPosition(x, y)
   self.y = y
   self.shiftX = math.floor(-x+0.5) + love.graphics.getWidth()/2 / self.scaleX
   self.shiftY = math.floor(-y+0.5) + love.graphics.getHeight()/2 / self.scaleY
+  
+  self.shiftX = math.max(math.min(self.shiftX, 0), -self.worldWidth + self.hfov)
+  self.shiftY = math.max(math.min(self.shiftY, 0), - self.worldHeight + self.vfov)
 end
 
 function Camera:follow(object)
