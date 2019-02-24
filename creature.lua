@@ -11,11 +11,11 @@ setmetatable(Creature, {
 function Creature:_init(world,x,y,w,h,m)
   self.body = love.physics.newBody(world, x, y, "dynamic" )
   self.body:setFixedRotation(true)
-  self.body:setLinearDamping(0.2)
+  self.body:setLinearDamping(0.4)
   self.shape = love.physics.newRectangleShape(w or 12,h or 32)
   self.fixture = love.physics.newFixture( self.body, self.shape, 1 )
   self.fixture:setRestitution(0)
-  self.fixture:setFriction(0.05)
+  self.fixture:setFriction(0.2)
   self.body:setMass(m or 80)
 end
 

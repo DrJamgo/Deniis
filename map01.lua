@@ -9,7 +9,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 10,
-  nextobjectid = 20,
+  nextobjectid = 28,
   properties = {},
   tilesets = {
     {
@@ -50,8 +50,8 @@ return {
       offsety = 0.5,
       image = "assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-back-trees.png",
       properties = {
-        ["offsetx"] = 0.9,
-        ["offsety"] = 0.9
+        ["offsetx"] = 0.97,
+        ["offsety"] = 0.97
       }
     },
     {
@@ -64,8 +64,8 @@ return {
       offsety = 0,
       image = "assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-middle-trees.png",
       properties = {
-        ["offsetx"] = 0.85,
-        ["offsety"] = 0.85
+        ["offsetx"] = 0.9,
+        ["offsety"] = 0.95
       }
     },
     {
@@ -78,8 +78,8 @@ return {
       offsety = 0,
       image = "assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-front-trees.png",
       properties = {
-        ["offsetx"] = 0.8,
-        ["offsety"] = 0.8
+        ["offsetx"] = 0.5,
+        ["offsety"] = 0.9
       }
     },
     {
@@ -247,6 +247,90 @@ return {
           properties = {
             ["friction"] = 0.2
           }
+        },
+        {
+          id = 22,
+          name = "",
+          type = "",
+          shape = "polygon",
+          x = 200.667,
+          y = 128.667,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 55.3333, y = 0 },
+            { x = 55, y = -16 },
+            { x = -2, y = -15 }
+          },
+          properties = {}
+        },
+        {
+          id = 23,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 269.667,
+          y = 65,
+          width = 55.3333,
+          height = 22,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 24,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 336,
+          y = 20,
+          width = 46.6667,
+          height = 20.3333,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 25,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 144,
+          y = 80.3333,
+          width = 19.3333,
+          height = 14,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 26,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 97,
+          y = 70.3333,
+          width = 11.6667,
+          height = 23,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 27,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 59.6667,
+          y = 30,
+          width = 13.3333,
+          height = 24,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },

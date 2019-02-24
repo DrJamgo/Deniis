@@ -43,7 +43,7 @@ function love.load()
   game.map.layers["spawn"].draw = drawFixtures
   game.camera:setWorldSize(game.map.width * game.map.tilewidth, game.map.height * game.map.tileheight)
   game.camera:follow(game.player)
-  game.camera:setScale(4.0)
+  game.camera:setScale(3.0)
 end
 
 function love.update(dt)

@@ -18,9 +18,9 @@ setmetatable(Player, {
 })
 
 function Player:_init(world,x,y)
-  Creature._init(self, world, x, y, 12, 32, 70)
-  self.jumpforce = 10000
-  self.runforce = 7000
+  Creature._init(self, world, x, y, 10, 24, 70)
+  self.jumpforce = 12000
+  self.runforce = 10000
   self.jump = Ability(0.5)
   
   self.fixture:setUserData(self)
@@ -95,7 +95,7 @@ function Player:update(dt)
 end
 
 function Player:draw()
-  love.graphics.draw(self.image, math.floor(self.body:getX()-15.5), math.floor(self.body:getY()-12.5))
+  love.graphics.draw(self.image, math.floor(self.body:getX()-14.5), math.floor(self.body:getY()-15.5))
 end
 
 function Player:mousepressed(dx,dy,button)

@@ -31,7 +31,6 @@ end
 
 function Projectile:postSolve(fixture, other, collision, normalimpulse, tangentimpulse)
   local userdata = other:getUserData()
-  
   if userdata.hit then
     self.hitother = userdata
     self.impulse = normalimpulse

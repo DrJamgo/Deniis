@@ -35,6 +35,8 @@ function updateFixtures(dt)
       end
     end
   end
+  
+  collectgarbage()
 end
 
 function destroyFixture(fixture)
