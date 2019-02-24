@@ -5,41 +5,44 @@ function setLayer(layer)
 end
 
 function drawFixtures(self)
-  for k, object in pairs(self.objects) do
-    if object.draw then
-      object:draw()
-    end
-    if object.getUserData then
-      local userdatda = object:getUserData()
-      if userdatda.draw then
-        userdatda:draw()
+  local bodies = game.world:getBodies()
+  for i, body in pairs(bodies) do
+    local fixtures = body:getFixtures()
+    for k, object in pairs(fixtures) do
+      if object.getUserData and object:getUserData().draw then
+        object:getUserData():draw()
+      else
+        local points = {body:getWorldPoints(object:getShape():getPoints())}
+        love.graphics.setColor( 0, 0, 0, 1 )
+        love.graphics.polygon("fill", points)
       end
     end
   end
 end
 
 function updateFixtures(dt)
-  for k, fixture in pairs(fixturelist) do  
-    if fixture and fixture.getUserData then
+  local bodies = game.world:getBodies()
+  for i, body in pairs(bodies) do
+    local fixtures = body:getFixtures()
+    for k, fixture in pairs(fixtures) do  
       local userdata = fixture:getUserData()
       if userdata and userdata.update then
         userdata:update(dt)
       end
       if userdata and userdata.destroyme then
         fixture:setUserData(nil)
-        fixturelist[k]:getBody():destroy()
-        fixturelist[k] = nil
+        fixture:destroy()
       end
     end
   end
 end
 
-function addFixture(fixture)
-  fixturelist[#fixturelist+1] = fixture
-end
-
 function destroyFixture(fixture)
-  fixture:getUserData().destroyme = true
+  if fixture:getUserData() then
+    fixture:getUserData().destroyme = true
+  else
+    fixture:setUserData({destroyme=true})
+  end
 end
 
 Cat = {}

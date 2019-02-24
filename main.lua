@@ -7,7 +7,7 @@ require "hud"
 require "collisions"
 require "objects/fixtures"
 
-local game = {}
+game = {}
 
 game.world = nil
 game.camera = Camera()
@@ -40,10 +40,7 @@ function love.load()
     end
   end
   
-  addFixture(game.player.fixture)
-
   game.map.layers["spawn"].draw = drawFixtures
-
   game.camera:follow(game.player)
   game.camera:setScale(4.0)
 end

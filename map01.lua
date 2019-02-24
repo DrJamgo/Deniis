@@ -9,8 +9,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 10,
-  nextobjectid = 18,
-  backgroundcolor = { 0, 0, 0 },
+  nextobjectid = 20,
   properties = {},
   tilesets = {
     {
@@ -175,7 +174,7 @@ return {
           width = 11,
           height = 9.5,
           rotation = 0,
-          visible = false,
+          visible = true,
           properties = {
             ["density"] = 1000,
             ["dynamic"] = true,
@@ -192,7 +191,7 @@ return {
           width = 10,
           height = 17,
           rotation = 0,
-          visible = false,
+          visible = true,
           properties = {
             ["density"] = 1000,
             ["dynamic"] = true,
@@ -209,7 +208,7 @@ return {
           width = 8,
           height = 8,
           rotation = 0,
-          visible = false,
+          visible = true,
           properties = {
             ["density"] = 1000,
             ["dynamic"] = true,
@@ -226,7 +225,7 @@ return {
           width = 11,
           height = 13,
           rotation = 0,
-          visible = false,
+          visible = true,
           properties = {
             ["categories"] = 2,
             ["density"] = 1000,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="32" height="16" tilewidth="16" tileheight="16" infinite="0" backgroundcolor="#000000" nextlayerid="10" nextobjectid="18">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="32" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="20">
  <tileset firstgid="1" source="tilea4.tsx"/>
  <imagelayer id="6" name="background" offsetx="0.5" offsety="0.5">
   <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-back-trees.png" width="272" height="160"/>
@@ -44,28 +44,28 @@
   <object id="5" x="250.5" y="165">
    <polygon points="5.66667,58.3333 5.54444,-4.97778 59.5,-13 100.5,-35.5 133,-62.5 147.833,-85.3333 169.833,-110.333 228,-126 228.833,59.1667"/>
   </object>
-  <object id="12" x="166.5" y="150.864" width="11" height="9.5" visible="0">
+  <object id="12" x="166.5" y="150.864" width="11" height="9.5">
    <properties>
     <property name="density" type="float" value="1000"/>
     <property name="dynamic" type="bool" value="true"/>
     <property name="friction" type="float" value="1"/>
    </properties>
   </object>
-  <object id="13" x="167" y="133.955" width="10" height="17" visible="0">
+  <object id="13" x="167" y="133.955" width="10" height="17">
    <properties>
     <property name="density" type="float" value="1000"/>
     <property name="dynamic" type="bool" value="true"/>
     <property name="friction" type="float" value="1"/>
    </properties>
   </object>
-  <object id="14" x="168.091" y="125.727" width="8" height="8" visible="0">
+  <object id="14" x="168.091" y="125.727" width="8" height="8">
    <properties>
     <property name="density" type="float" value="1000"/>
     <property name="dynamic" type="bool" value="true"/>
     <property name="friction" type="float" value="1"/>
    </properties>
   </object>
-  <object id="15" x="115.591" y="179.182" width="11" height="13" visible="0">
+  <object id="15" x="115.591" y="179.182" width="11" height="13">
    <properties>
     <property name="categories" type="int" value="2"/>
     <property name="density" type="float" value="1000"/>
@@ -83,6 +83,6 @@
   <object id="6" name="player" x="65.1667" y="96.8333" width="24" height="22"/>
  </objectgroup>
  <imagelayer id="9" name="Image Layer 4">
-  <image source="map01.png" width="512" height="256"/>
+  <image source="map01.png" width="513" height="257"/>
  </imagelayer>
 </map>

@@ -27,8 +27,6 @@ function Projectile:_init(owner, shape, x, y, dx, dy)
   self.fixture:setFriction(0.0)
   self.fixture:setUserData(self)
   self.fixture:setFilterData(Cat.projectile, Cat.all ,owner.fixture:getGroupIndex())
-  
-  addFixture(self.fixture)
 end
 
 function Projectile:postSolve(fixture, other, collision, normalimpulse, tangentimpulse)
