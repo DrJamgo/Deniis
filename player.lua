@@ -19,7 +19,7 @@ setmetatable(Player, {
 
 function Player:_init(world,x,y)
   Creature._init(self, world, x, y, 10, 24, 70)
-  self.jumpforce = 12000
+  self.jumpforce = 13000
   self.runforce = 10000
   self.jump = Ability(0.5)
   
@@ -74,7 +74,7 @@ function Player:update(dt)
       end
     end
   else
-    if w then
+    if w and self.inAir < 0.4 then
       body:applyForce(0,-jumpforce)
     end
     if d then
