@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="32" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="28">
  <tileset firstgid="1" source="tilea4.tsx"/>
- <imagelayer id="6" name="background" offsetx="0.5" offsety="0.5">
-  <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-back-trees.png" width="272" height="160"/>
+ <imagelayer id="6" name="background" offsetx="-0.166667" offsety="-40.5">
+  <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-back-trees.png" width="272" height="240"/>
   <properties>
    <property name="offsetx" type="float" value="0.97"/>
    <property name="offsety" type="float" value="0.97"/>
   </properties>
  </imagelayer>
- <imagelayer id="8" name="background2">
-  <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-middle-trees.png" width="272" height="160"/>
+ <imagelayer id="8" name="background2" offsetx="1.33333" offsety="-37.6667">
+  <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-middle-trees.png" width="272" height="240"/>
   <properties>
    <property name="offsetx" type="float" value="0.9"/>
    <property name="offsety" type="float" value="0.95"/>
   </properties>
  </imagelayer>
- <imagelayer id="7" name="front" offsetx="0.5" offsety="0">
-  <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-front-trees.png" width="272" height="160"/>
+ <imagelayer id="7" name="front" offsetx="1.16667" offsety="-39">
+  <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-front-trees.png" width="272" height="240"/>
   <properties>
    <property name="offsetx" type="float" value="0.5"/>
    <property name="offsety" type="float" value="0.9"/>

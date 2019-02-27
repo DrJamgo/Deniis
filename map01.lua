@@ -46,8 +46,8 @@ return {
       name = "background",
       visible = true,
       opacity = 1,
-      offsetx = 0.5,
-      offsety = 0.5,
+      offsetx = -0.166667,
+      offsety = -40.5,
       image = "assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-back-trees.png",
       properties = {
         ["offsetx"] = 0.97,
@@ -60,8 +60,8 @@ return {
       name = "background2",
       visible = true,
       opacity = 1,
-      offsetx = 0,
-      offsety = 0,
+      offsetx = 1.33333,
+      offsety = -37.6667,
       image = "assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-middle-trees.png",
       properties = {
         ["offsetx"] = 0.9,
@@ -74,8 +74,8 @@ return {
       name = "front",
       visible = true,
       opacity = 1,
-      offsetx = 0.5,
-      offsety = 0,
+      offsetx = 1.16667,
+      offsety = -39,
       image = "assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-front-trees.png",
       properties = {
         ["offsetx"] = 0.5,
