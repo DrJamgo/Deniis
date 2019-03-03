@@ -31,12 +31,14 @@ end
 
 function Projectile:postSolve(fixture, other, collision, normalimpulse, tangentimpulse)
   local userdata = other:getUserData()
-  if userdata.hit then
-    self.hitother = userdata
-    self.impulse = normalimpulse
-  elseif self.alive == nil then
-    self.glue = other
-    self.x, self.y = collision:getPositions()
+  if self.alive == nil then
+    if userdata.hit then
+      self.hitother = userdata
+      self.impulse = normalimpulse
+    else
+      self.glue = other
+      self.x, self.y = collision:getPositions()
+    end
   end
 end
 
