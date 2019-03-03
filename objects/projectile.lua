@@ -12,7 +12,7 @@ setmetatable(Projectile, {
 
 function Projectile:_init(owner, shape, x, y, dx, dy)
   self.world = owner.body:getWorld()
-  self.body = love.physics.newBody(self.world, x, y, "dynamic")
+  self.body = love.physics.newBody(self.world, x +dx *8, y +dy *8, "dynamic")
   self.fixture = love.physics.newFixture(self.body, shape, 1)
   
   self.body:setFixedRotation(true)
@@ -42,7 +42,7 @@ end
 
 function Projectile:update(dt)
   if self.hitother then
-    self.hitother:hit(normalimpulse)
+    self.hitother:hit(self.damage or 0)
     destroyFixture(self.fixture)
   elseif self.glue and not self.alive then
     local joint = love.physics.newWeldJoint( self.body, self.glue:getBody(), self.x, self.y, false )

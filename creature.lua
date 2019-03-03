@@ -1,3 +1,5 @@
+require 'objects/fixtures'
+
 Creature = {}
 Creature.__index = Creature
 setmetatable(Creature, {
@@ -8,15 +10,38 @@ setmetatable(Creature, {
   end,
 })
 
-function Creature:_init(world,x,y,w,h,m)
-  self.body = love.physics.newBody(world, x, y, "dynamic" )
-  self.body:setFixedRotation(true)
-  self.body:setLinearDamping(0.4)
-  self.shape = love.physics.newRectangleShape(w or 12,h or 32)
-  self.fixture = love.physics.newFixture( self.body, self.shape, 1 )
-  self.fixture:setRestitution(0)
-  self.fixture:setFriction(0.2)
+function Creature:_init(world,x,y,w,h,m,hp)
+  self.body = self:_initBody(world, x, y)
+  self.shape = self:_initShape(w, h)
+  self.fixture = self:_initFixture()
+  self.hp = hp or 10
+end
+
+function Creature:_initBody(world, x, y)
+  local body = love.physics.newBody(world, x, y, "dynamic" )
+  body:setFixedRotation(true)
+  body:setLinearDamping(0.4)
+  return body
+end
+
+function Creature:_initShape(w, h)
+  return love.physics.newRectangleShape(w, h)
+end
+
+function Creature:_initFixture(m)
+  local fixture = love.physics.newFixture( self.body, self.shape, 1 )
+  fixture:setRestitution(0)
+  fixture:setFriction(0.2)
+  
   self.body:setMass(m or 80)
+  
+  fixture:setUserData(self)
+  fixture:setFilterData(Cat.creature, Cat.all, Group.enemy)
+  return fixture
+end
+
+function Creature:die()
+  destroyFixture(self.fixture)
 end
 
 function Creature:updateContacts(dt)
@@ -49,13 +74,18 @@ function Creature:update(dt)
 end
 
 function Creature:draw()
-  if self.onGround then
-    love.graphics.print(string.format("onGround:%0.2f", self.onGround), self.body:getPosition())
-  else
-    love.graphics.print(string.format("inAir:%0.2f", (self.inAir or 0)), self.body:getPosition())
+  if self.image then
+    love.graphics.draw(self.image, math.floor(self.body:getX()-14.5), math.floor(self.body:getY()-15.5))
   end
 end
 
 function Creature:getPosition()
   return self.body:getPosition()
+end
+
+function Creature:hit(damage)
+  self.hp = self.hp - damage
+  if self.hp <= 0 then
+    self:die()
+  end
 end

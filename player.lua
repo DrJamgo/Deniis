@@ -18,14 +18,13 @@ setmetatable(Player, {
 })
 
 function Player:_init(world,x,y)
-  Creature._init(self, world, x, y, 10, 24, 70)
+  Creature._init(self, world, x, y, 10, 24, 70, 100)
+  self.fixture:setGroupIndex(Group.player)
+  
   self.jumpforce = 13000
   self.runforce = 10000
   self.jump = Ability(0.5)
-  
-  self.fixture:setUserData(self)
-  self.fixture:setFilterData(Cat.creature, Cat.all, Group.player)
-  
+    
   self.elements = {
     fire = Fire(self),
     earth = Fire(self), --FIXME
@@ -34,9 +33,7 @@ function Player:_init(world,x,y)
   }
   
   self.element = "fire"
-  
   self.image = love.graphics.newImage("assets/Deniis.png")
-
 end
 
 function Player:beginContact(fixture, other, collision)
@@ -92,10 +89,6 @@ function Player:update(dt)
     if love.keyboard.isDown( '3' ) then self.element = "ice" end
     if love.keyboard.isDown( '4' ) then self.element = "air" end
   end
-end
-
-function Player:draw()
-  love.graphics.draw(self.image, math.floor(self.body:getX()-14.5), math.floor(self.body:getY()-15.5))
 end
 
 function Player:mousepressed(dx,dy,button)

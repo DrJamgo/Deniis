@@ -48,6 +48,7 @@ setmetatable(FireballProjectile, {
 FireballProjectile.mass = 5
 FireballProjectile.velocity = 32 * 4
 FireballProjectile.size = 4
+FireballProjectile.damage = 50
 FireballProjectile.image = love.graphics.newImage("assets/Fireball.png")
 
 function FireballProjectile:_init(owner, x, y, dx, dy)
