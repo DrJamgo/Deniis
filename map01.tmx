@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="32" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="28">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="32" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="29">
  <tileset firstgid="1" source="tilea4.tsx"/>
  <imagelayer id="6" name="background" offsetx="-0.166667" offsety="-40.5">
   <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-back-trees.png" width="272" height="240"/>
@@ -22,7 +22,7 @@
    <property name="offsety" type="float" value="0.9"/>
   </properties>
  </imagelayer>
- <objectgroup color="#000000" id="1" name="obstacle" visible="0">
+ <objectgroup color="#000000" id="1" name="obstacle">
   <properties>
    <property name="collidable" type="bool" value="true"/>
   </properties>
@@ -89,6 +89,7 @@
  </objectgroup>
  <objectgroup id="3" name="spawn">
   <object id="6" name="player" x="65.1667" y="96.8333" width="24" height="22"/>
+  <object id="28" type="creatures/stachli" x="148.5" y="148.5"/>
  </objectgroup>
  <imagelayer id="9" name="Image Layer 4">
   <image source="map01.png" width="513" height="257"/>

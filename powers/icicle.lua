@@ -52,7 +52,7 @@ IcicleProjectile.sizex = 16
 IcicleProjectile.sizey = 6
 IcicleProjectile.decaytime = 5.0
 IcicleProjectile.image = love.graphics.newImage("assets/Icicle.png")
-
+IcicleProjectile.damage = 25
 
 function IcicleProjectile:_init(owner, x, y, dx, dy)
     local shape = love.physics.newPolygonShape(

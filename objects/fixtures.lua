@@ -53,7 +53,7 @@ Cat.dynamic     = 2^2
 Cat.projectile  = 2^3
 Cat.creature    = 2^4
 Cat.item        = 2^5
-Cat.all         = 65335
+Cat.all         = 65535
 
 Group = {}
 Group.player    = -1

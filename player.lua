@@ -34,6 +34,7 @@ function Player:_init(world,x,y)
   
   self.element = "fire"
   self.image = love.graphics.newImage("assets/Deniis.png")
+  self.imageoffset = {15, 16}
 end
 
 function Player:beginContact(fixture, other, collision)

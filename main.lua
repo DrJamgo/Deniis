@@ -37,6 +37,11 @@ function love.load()
     if object.name == "player" then
       game.player = Player(game.world, object.x + object.width / 2, object.y + object.height / 2)
       --spawnlayer.objects[#spawnlayer.objects+1] = game.player
+    else
+      local creature = require(object.type)
+      if creature then
+        creature(game.world, object.x + object.width / 2, object.y + object.height / 2)
+      end
     end
   end
   
@@ -47,6 +52,9 @@ function love.load()
 end
 
 function love.update(dt)
+  local dt = math.min(dt, 100)
+  
+  
   if pause then return end
   updateFixtures(dt)
   game.map:update(dt)
@@ -98,6 +106,13 @@ function love.draw()
         elseif s:getType() == "circle" then
           love.graphics.circle("line", b:getX(), b:getY(), s:getRadius())
         end
+        
+        love.graphics.circle("fill", b:getX(), b:getY(), 2)
+        
+        --local categories, mask, group = f:getFilterData()
+        --love.graphics.print("["..categories..","..mask..","..group.."]", b:getX(), b:getY(), 0, 0.5,0.5)
+        
+        
       end
     end
     

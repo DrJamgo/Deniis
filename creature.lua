@@ -15,6 +15,8 @@ function Creature:_init(world,x,y,w,h,m,hp)
   self.shape = self:_initShape(w, h)
   self.fixture = self:_initFixture()
   self.hp = hp or 10
+  self.imageoffset = {0,0}
+  self.faceright = true
 end
 
 function Creature:_initBody(world, x, y)
@@ -71,11 +73,27 @@ end
 
 function Creature:update(dt)
   self:updateContacts(dt)
+  
+  
 end
 
 function Creature:draw()
   if self.image then
-    love.graphics.draw(self.image, math.floor(self.body:getX()-14.5), math.floor(self.body:getY()-15.5))
+    local ox = self.imageoffset[1]
+    local oy = self.imageoffset[2]
+    sx = 1
+    if self.faceright == false then
+      sx = -1
+    end
+    love.graphics.draw(self.image, math.floor(self.body:getX()), math.floor(self.body:getY()),0,sx,1,ox,oy)
+  else
+    local s = self.fixture:getShape()
+    local b = self.fixture:getBody()
+    if s.getPoints then
+      love.graphics.polygon("line", b:getWorldPoints(s:getPoints()))
+    elseif s:getType() == "circle" then
+      love.graphics.circle("line", b:getX(), b:getY(), s:getRadius())
+    end
   end
 end
 

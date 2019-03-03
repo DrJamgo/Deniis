@@ -9,7 +9,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 10,
-  nextobjectid = 28,
+  nextobjectid = 29,
   properties = {},
   tilesets = {
     {
@@ -86,7 +86,7 @@ return {
       type = "objectgroup",
       id = 1,
       name = "obstacle",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -354,6 +354,19 @@ return {
           y = 96.8333,
           width = 24,
           height = 22,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 28,
+          name = "",
+          type = "creatures/stachli",
+          shape = "rectangle",
+          x = 148.5,
+          y = 148.5,
+          width = 0,
+          height = 0,
           rotation = 0,
           visible = true,
           properties = {}
