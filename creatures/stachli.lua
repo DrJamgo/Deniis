@@ -11,7 +11,7 @@ setmetatable(Stachli, {
 })
 
 Stachli.jumpforce = 4500
-Stachli.damage = 50
+Stachli.damage = 10
 Stachli.impulse = 8000
 Stachli.hp = 100
 Stachli.mass = 70
@@ -36,7 +36,7 @@ function Stachli:_updateBehaviour(dt)
   
   local dir = (self.faceright and 1 or -1)
   
-  self.velo = (self.velo or 0.0) * 0.5 + vx * 0.5 * dir
+  self.velo = (self.velo or 0.0) * 0.8 + vx * 0.2 * dir
   
   if self.velo < 2 then
     self.stuck = self.stuck + dt

@@ -17,7 +17,7 @@ setmetatable(Player, {
   end,
 })
 
-Player.hp = 1000
+Player.hp = 100
 
 function Player:_init(world,x,y)
   Creature._init(self, world, x, y, 10, 24, 70, Player.hp)

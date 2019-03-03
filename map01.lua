@@ -8,8 +8,8 @@ return {
   height = 16,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 12,
-  nextobjectid = 53,
+  nextlayerid = 13,
+  nextobjectid = 54,
   properties = {},
   tilesets = {
     {
@@ -111,10 +111,21 @@ return {
       }
     },
     {
+      type = "imagelayer",
+      id = 12,
+      name = "mapb",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = -20,
+      image = "map01b.png",
+      properties = {}
+    },
+    {
       type = "objectgroup",
       id = 1,
       name = "obstacle",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -200,12 +211,12 @@ return {
           shape = "rectangle",
           x = 512,
           y = 8.16667,
-          width = 12.0303,
-          height = 127.833,
+          width = 6.69697,
+          height = 126.924,
           rotation = 0,
           visible = true,
           properties = {
-            ["density"] = 350,
+            ["density"] = 200,
             ["dynamic"] = true
           }
         },
@@ -249,7 +260,7 @@ return {
           visible = true,
           polygon = {
             { x = -10.303, y = -17 },
-            { x = -10.4015, y = -0.178169 },
+            { x = -10.4015, y = -1.24067 },
             { x = 31.1667, y = -1.17087 },
             { x = 22.25, y = 54.0069 },
             { x = 15.25, y = 119.217 },
@@ -385,11 +396,11 @@ return {
     {
       type = "imagelayer",
       id = 9,
-      name = "Image Layer 4",
-      visible = false,
+      name = "map",
+      visible = true,
       opacity = 1,
       offsetx = 0,
-      offsety = 0,
+      offsety = -20,
       image = "map01.png",
       properties = {}
     }

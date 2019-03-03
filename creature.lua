@@ -52,23 +52,25 @@ function Creature:updateContacts(dt)
   self.enemycontact = nil
   for k, contact in pairs(contacts) do
     local x1, y1, x2, y2 = contact:getPositions()
-    local f1, f2 = contact:getFixtures()
-    nx, ny = contact:getNormal()
+    if x1 and y1 then
+      local f1, f2 = contact:getFixtures()
+      nx, ny = contact:getNormal()
 
-    -- swap enerything if we are f2
-    local me, other = f1, f2
-    if self.fixture == f2 then 
-      me, other, nx, ny = f2, f1, -nx, -ny
-    end
-    
-    if x1 and other:getGroupIndex() ~= me:getGroupIndex() and other:getUserData() and other:getUserData().hit then
-      --local dx, dy = other:getBody():getX() - me:getBody():getX() , other:getBody():getY() - me:getBody():getY()
-      --local dist = math.sqrt(dx*dx+dy*dy)
+      -- swap enerything if we are f2
+      local me, other = f1, f2
+      if self.fixture == f2 then 
+        me, other, nx, ny = f2, f1, -nx, -ny
+      end
       
-      self.enemycontact = {enemy=other:getUserData(), ny=ny, nx=nx}
-    end
-    if ny > 0.1 then
-      groundobject = other
+      if other:getGroupIndex() ~= me:getGroupIndex() and other:getUserData() and other:getUserData().hit then
+        --local dx, dy = other:getBody():getX() - me:getBody():getX() , other:getBody():getY() - me:getBody():getY()
+        --local dist = math.sqrt(dx*dx+dy*dy)
+        
+        self.enemycontact = {enemy=other:getUserData(), ny=ny, nx=nx}
+      end
+      if ny > 0.1 then
+        groundobject = other
+      end
     end
     
   end
