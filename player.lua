@@ -40,6 +40,8 @@ function Player:_init(world,x,y)
   self.image = love.graphics.newImage("assets/Deniis.png")
   self.imageorigin = {16, 16}
   self.faceright = true
+  
+  self.quadindex = 0
 end
 
 function Player:beginContact(fixture, other, collision)
@@ -74,10 +76,12 @@ function Player:update(dt)
       if d and vx < self.maxspeed then
         body:applyForce(runforce,0)
         body:applyLinearImpulse(0,-jumpforce*0.05)
+        self.faceright = true
       end
       if a and vx > -self.maxspeed then
         body:applyForce(-runforce,0)
         body:applyLinearImpulse(0,-jumpforce*0.05)
+        self.faceright = false
       end
     end
   else
@@ -86,9 +90,21 @@ function Player:update(dt)
     end
     if d and vx < self.maxspeed then
       body:applyForce(runforce*0.5,0)
+      self.faceright = true
     end
     if a and vx > -self.maxspeed then
       body:applyForce(-runforce*0.5,0)
+      self.faceright = false
+    end
+  end
+  
+  if self.onGround or self.inAir < 0.2 then
+    if math.abs(vx) < 2 then
+      self.quadindex = 0
+    else
+      self.quadindex = self.quadindex + math.abs(vx) * dt  / 4
+      if self.quadindex > 8 then self.quadindex = self.quadindex - 8 end
+      if self.quadindex < 1 then self.quadindex = self.quadindex + 8 end
     end
   end
   
@@ -99,6 +115,16 @@ function Player:update(dt)
     if love.keyboard.isDown( '3' ) then self.element = "ice" end
     if love.keyboard.isDown( '4' ) then self.element = "air" end
   end
+end
+
+function Player:draw()
+  local ox = self.imageorigin[1]
+  local oy = self.imageorigin[2]
+  local image = self.image
+  local dir = (self.faceright and 1 or -1)
+    
+  local quad = love.graphics.newQuad(math.floor(self.quadindex)*32, 0, 32, 32, image:getWidth(), image:getHeight())
+  love.graphics.draw(self.image, quad, math.floor(self.body:getX()+0.5), math.floor(self.body:getY()+0.5), 0, dir, 1, ox, oy)
 end
 
 function Player:mousepressed(dx,dy,button)
