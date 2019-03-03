@@ -25,8 +25,8 @@ function Player:_init(world,x,y)
   self.fixture:setFriction(0.4)
   
   self.jumpforce = 13000
-  self.runforce = 20000
-  self.maxspeed = 64
+  self.runforce = 25000
+  self.maxspeed = 48
   self.jump = Ability(0.5)
     
   self.elements = {
@@ -68,14 +68,16 @@ function Player:update(dt)
   self.jump:update(dt)
   
   if self.onGround then
-    if w and self.onGround > 0.2 and self.jump:activate() then
+    if w and self.jump:activate() then
       body:applyLinearImpulse(0,-jumpforce)
     else
       if d and vx < self.maxspeed then
         body:applyForce(runforce,0)
+        body:applyLinearImpulse(0,-jumpforce*0.05)
       end
-      if a and vy > -self.maxspeed then
+      if a and vx > -self.maxspeed then
         body:applyForce(-runforce,0)
+        body:applyLinearImpulse(0,-jumpforce*0.05)
       end
     end
   else
@@ -85,7 +87,7 @@ function Player:update(dt)
     if d and vx < self.maxspeed then
       body:applyForce(runforce*0.5,0)
     end
-    if a and vy > -self.maxspeed then
+    if a and vx > -self.maxspeed then
       body:applyForce(-runforce*0.5,0)
     end
   end
