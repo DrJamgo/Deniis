@@ -38,4 +38,6 @@ function HUD:draw()
     end
     love.graphics.rectangle(style, (i-1) * 64, 0, 64, 64)
   end
+  
+  love.graphics.print("Health:"..self.game.player.hp, love.graphics.getWidth() - 100, 0)
 end

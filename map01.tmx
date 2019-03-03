@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="32" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="29">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="64" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="53">
  <tileset firstgid="1" source="tilea4.tsx"/>
- <imagelayer id="6" name="background" offsetx="-0.166667" offsety="-40.5">
+ <imagelayer id="6" name="background" offsetx="0" offsety="-20">
   <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-back-trees.png" width="272" height="240"/>
   <properties>
    <property name="offsetx" type="float" value="0.97"/>
    <property name="offsety" type="float" value="0.97"/>
   </properties>
  </imagelayer>
- <imagelayer id="8" name="background2" offsetx="1.33333" offsety="-37.6667">
+ <imagelayer id="8" name="background2" offsetx="0" offsety="-20">
   <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-middle-trees.png" width="272" height="240"/>
   <properties>
-   <property name="offsetx" type="float" value="0.9"/>
+   <property name="offsetx" type="float" value="0.8"/>
    <property name="offsety" type="float" value="0.95"/>
   </properties>
  </imagelayer>
- <imagelayer id="7" name="front" offsetx="1.16667" offsety="-39">
+ <imagelayer id="11" name="background3" offsetx="272" offsety="-20">
+  <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-middle-trees.png" width="272" height="240"/>
+  <properties>
+   <property name="offsetx" type="float" value="0.8"/>
+   <property name="offsety" type="float" value="0.95"/>
+  </properties>
+ </imagelayer>
+ <imagelayer id="7" name="front" offsetx="0" offsety="-20">
   <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-front-trees.png" width="272" height="240"/>
   <properties>
-   <property name="offsetx" type="float" value="0.5"/>
+   <property name="offsetx" type="float" value="0.6"/>
+   <property name="offsety" type="float" value="0.9"/>
+  </properties>
+ </imagelayer>
+ <imagelayer id="10" name="front2" offsetx="272" offsety="-20">
+  <image source="assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-front-trees.png" width="272" height="240"/>
+  <properties>
+   <property name="offsetx" type="float" value="0.6"/>
    <property name="offsety" type="float" value="0.9"/>
   </properties>
  </imagelayer>
@@ -26,72 +40,43 @@
   <properties>
    <property name="collidable" type="bool" value="true"/>
   </properties>
-  <object id="2" x="112.5" y="192" width="143" height="32">
-   <properties>
-    <property name="friction" type="float" value="0.5"/>
-   </properties>
-  </object>
-  <object id="3" x="0.5" y="192.5" width="111.5" height="15">
+  <object id="17" x="0.333333" y="62.25" width="31.3333" height="194.167">
    <properties>
     <property name="friction" type="float" value="0.2"/>
    </properties>
   </object>
-  <object id="4" x="163.022" y="160.033" width="93" height="32.5">
-   <properties>
-    <property name="friction" type="float" value="0.2"/>
-   </properties>
+  <object id="24" x="281.746" y="105.481" width="121.188" height="20.3333" rotation="5.49047"/>
+  <object id="34" x="31.6667" y="160">
+   <polygon points="0,0 48,0 53.3333,3 53.6667,16.3333 57.6667,26 67,31.6667 116,31.6667 127.667,30.3333 142.667,25.3333 151.333,22 161.333,16.3333 169.333,12.3333 173.333,9.33333 176.667,5.33333 182,0.666667 187,-1.66667 198,-2.66667 205.667,-2.33333 209.333,-0.333333 214,0.666667 219.667,0.666667 231.333,1 239.333,-8 239.667,-31.3333 272.333,-32 272.667,96.3333 -0.333333,96.3333"/>
   </object>
-  <object id="5" x="250.5" y="165">
-   <polygon points="5.66667,58.3333 5.54444,-4.97778 59.5,-13 100.5,-35.5 133,-62.5 147.833,-85.3333 169.833,-110.333 228,-126 228.833,59.1667"/>
-  </object>
-  <object id="12" x="166.5" y="150.864" width="11" height="9.5">
+  <object id="38" x="512" y="8.16667" width="12.0303" height="127.833">
    <properties>
-    <property name="density" type="float" value="1000"/>
+    <property name="density" type="float" value="350"/>
     <property name="dynamic" type="bool" value="true"/>
-    <property name="friction" type="float" value="1"/>
    </properties>
   </object>
-  <object id="13" x="167" y="133.955" width="10" height="17">
-   <properties>
-    <property name="density" type="float" value="1000"/>
-    <property name="dynamic" type="bool" value="true"/>
-    <property name="friction" type="float" value="1"/>
-   </properties>
+  <object id="42" x="608.182" y="127.636">
+   <polygon points="0,0 16.3636,-0.181818 46.1818,-3.09091 64.3636,-4.72727 90.8182,-2.09091 158.273,15.7045 239.205,16.0227 317.948,-2.1608 320.252,-13.6368 415.76,-21.8279 415.985,127.614 -9.18182,127.864"/>
   </object>
-  <object id="14" x="168.091" y="125.727" width="8" height="8">
-   <properties>
-    <property name="density" type="float" value="1000"/>
-    <property name="dynamic" type="bool" value="true"/>
-    <property name="friction" type="float" value="1"/>
-   </properties>
+  <object id="44" x="522" y="136.421">
+   <polygon points="-10.303,-17 -10.4015,-0.178169 31.1667,-1.17087 22.25,54.0069 15.25,119.217 -137.5,120.079 -138,0.287271"/>
   </object>
-  <object id="15" x="115.591" y="179.182" width="11" height="13">
-   <properties>
-    <property name="categories" type="int" value="2"/>
-    <property name="density" type="float" value="1000"/>
-    <property name="dynamic" type="bool" value="true"/>
-    <property name="friction" type="float" value="1"/>
-   </properties>
+  <object id="45" x="750.75" y="96.25">
+   <polygon points="-2.25,-2.25 41.75,-2.75 79.5,-10.75 100.25,-17 100,-29.5 73,-17.75 55,-12.75 26.5,-22 49.5,-8.75 28.5,-6.75"/>
   </object>
-  <object id="17" x="0.833333" y="63.75" width="31.3333" height="130.167">
-   <properties>
-    <property name="friction" type="float" value="0.2"/>
-   </properties>
+  <object id="46" x="384.333" y="78.6667">
+   <polygon points="0,0 37,4.66667 63.3333,5.66667 63.3333,-6 30.6667,-2 17,-16.6667 25.3333,-2"/>
   </object>
-  <object id="22" x="200.667" y="128.667">
-   <polygon points="0,0 55.3333,0 55,-16 -2,-15"/>
+  <object id="48" x="851" y="0.166667" width="35.8333" height="79.8333"/>
+  <object id="51" x="31" y="111.5">
+   <polygon points="0,0 58,-10 93.5,-20 131,-37 58,-16 78.5,-33.5 42,-14 -2,-12"/>
   </object>
-  <object id="23" x="269.667" y="65" width="55.3333" height="22"/>
-  <object id="24" x="336" y="20" width="46.6667" height="20.3333"/>
-  <object id="25" x="144" y="80.3333" width="19.3333" height="14"/>
-  <object id="26" x="97" y="70.3333" width="11.6667" height="23"/>
-  <object id="27" x="59.6667" y="30" width="13.3333" height="24"/>
  </objectgroup>
  <objectgroup id="3" name="spawn">
-  <object id="6" name="player" x="65.1667" y="96.8333" width="24" height="22"/>
-  <object id="28" type="creatures/stachli" x="148.5" y="148.5"/>
+  <object id="6" name="player" x="47.9167" y="136.083" width="16" height="24"/>
+  <object id="30" type="creatures/stachli" x="830.667" y="132.833"/>
  </objectgroup>
- <imagelayer id="9" name="Image Layer 4">
+ <imagelayer id="9" name="Image Layer 4" visible="0">
   <image source="map01.png" width="513" height="257"/>
  </imagelayer>
 </map>

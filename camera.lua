@@ -10,6 +10,7 @@ setmetatable(Camera, {
 
 function Camera:_init()
   self.scaleX, self.scaleY = 1,1
+  self.transform = love.math.newTransform()
 end
 
 function Camera:setFOV(hfov, vfov)
@@ -47,11 +48,16 @@ function Camera:update(dt)
   if self.follow and self.follow.getPosition then
     self:setPosition(self.follow:getPosition())
   end
+  self.transform:reset()
+  self.transform:scale(self.scaleX, self.scaleY)
+  self.transform:translate(self.shiftX , self.shiftY )
 end
 
 function Camera:getTransform()
-  self.transform = love.math.newTransform()
-  self.transform:scale(self.scaleX, self.scaleY)
-  self.transform:translate(self.shiftX , self.shiftY )
   return self.transform
+end
+
+function Camera:isVisible(x,y,w,h)
+  local x,y = self.transform:transformPoint(x,y)
+  return x > 0 and x < love.graphics.getWidth() and y > 0 and y < love.graphics.getHeight()
 end

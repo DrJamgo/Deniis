@@ -15,8 +15,8 @@ function Creature:_init(world,x,y,w,h,m,hp)
   self.shape = self:_initShape(w, h)
   self.fixture = self:_initFixture()
   self.hp = hp or 10
-  self.imageoffset = {0,0}
-  self.faceright = true
+  self.imageorigin = {0,0}
+  self.faceright = false
 end
 
 function Creature:_initBody(world, x, y)
@@ -49,15 +49,28 @@ end
 function Creature:updateContacts(dt)
   local contacts = self.body:getContacts()
   local groundobject
+  self.enemycontact = nil
   for k, contact in pairs(contacts) do
     local x1, y1, x2, y2 = contact:getPositions()
     local f1, f2 = contact:getFixtures()
     nx, ny = contact:getNormal()
-    if f1 == self.fixture and ny > 0.1 then
-      groundobject = f2 break
-    elseif f2 == self.fixture and ny < -0.1 then
-      groundobject = f1 break
+
+    -- swap enerything if we are f2
+    local me, other = f1, f2
+    if self.fixture == f2 then 
+      me, other, nx, ny = f2, f1, -nx, -ny
     end
+    
+    if x1 and other:getGroupIndex() ~= me:getGroupIndex() and other:getUserData() and other:getUserData().hit then
+      --local dx, dy = other:getBody():getX() - me:getBody():getX() , other:getBody():getY() - me:getBody():getY()
+      --local dist = math.sqrt(dx*dx+dy*dy)
+      
+      self.enemycontact = {enemy=other:getUserData(), ny=ny, nx=nx}
+    end
+    if ny > 0.1 then
+      groundobject = other
+    end
+    
   end
   
   if groundobject then
@@ -73,14 +86,19 @@ end
 
 function Creature:update(dt)
   self:updateContacts(dt)
-  
-  
+  if game.camera:isVisible(self.body:getX(), self.body:getY(), 0,0) then
+    self:_updateBehaviour(dt)
+  end
+end
+
+function Creature:_updateBehaviour(dt)
+  -- do nothing
 end
 
 function Creature:draw()
   if self.image then
-    local ox = self.imageoffset[1]
-    local oy = self.imageoffset[2]
+    local ox = self.imageorigin[1]
+    local oy = self.imageorigin[2]
     sx = 1
     if self.faceright == false then
       sx = -1

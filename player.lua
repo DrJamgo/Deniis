@@ -17,12 +17,16 @@ setmetatable(Player, {
   end,
 })
 
+Player.hp = 1000
+
 function Player:_init(world,x,y)
-  Creature._init(self, world, x, y, 10, 24, 70, 100)
+  Creature._init(self, world, x, y, 10, 24, 70, Player.hp)
   self.fixture:setGroupIndex(Group.player)
+  self.fixture:setFriction(0.4)
   
   self.jumpforce = 13000
-  self.runforce = 10000
+  self.runforce = 20000
+  self.maxspeed = 64
   self.jump = Ability(0.5)
     
   self.elements = {
@@ -34,7 +38,8 @@ function Player:_init(world,x,y)
   
   self.element = "fire"
   self.image = love.graphics.newImage("assets/Deniis.png")
-  self.imageoffset = {15, 16}
+  self.imageorigin = {15, 16}
+  self.faceright = true
 end
 
 function Player:beginContact(fixture, other, collision)
@@ -58,16 +63,18 @@ function Player:update(dt)
   
   local body = self.body
   
+  vx, vy = body:getLinearVelocity()
+  
   self.jump:update(dt)
   
   if self.onGround then
     if w and self.onGround > 0.2 and self.jump:activate() then
       body:applyLinearImpulse(0,-jumpforce)
     else
-      if d then
+      if d and vx < self.maxspeed then
         body:applyForce(runforce,0)
       end
-      if a then
+      if a and vy > -self.maxspeed then
         body:applyForce(-runforce,0)
       end
     end
@@ -75,11 +82,11 @@ function Player:update(dt)
     if w and self.inAir < 0.4 then
       body:applyForce(0,-jumpforce)
     end
-    if d then
-      body:applyForce(runforce*0.5,0)
+    if d and vx < self.maxspeed then
+      body:applyForce(runforce*0.25,0)
     end
-    if a then
-      body:applyForce(-runforce*0.5,0)
+    if a and vy > -self.maxspeed then
+      body:applyForce(-runforce*0.25,0)
     end
   end
   

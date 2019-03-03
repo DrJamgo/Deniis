@@ -56,8 +56,9 @@ Cat.item        = 2^5
 Cat.all         = 65535
 
 Group = {}
+Group.enemy     = 0
 Group.player    = -1
-Group.enemy     = -2
+
 
 
 
