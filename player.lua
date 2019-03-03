@@ -38,7 +38,7 @@ function Player:_init(world,x,y)
   
   self.element = "fire"
   self.image = love.graphics.newImage("assets/Deniis.png")
-  self.imageorigin = {15, 16}
+  self.imageorigin = {16, 16}
   self.faceright = true
 end
 
@@ -83,10 +83,10 @@ function Player:update(dt)
       body:applyForce(0,-jumpforce)
     end
     if d and vx < self.maxspeed then
-      body:applyForce(runforce*0.25,0)
+      body:applyForce(runforce*0.5,0)
     end
     if a and vy > -self.maxspeed then
-      body:applyForce(-runforce*0.25,0)
+      body:applyForce(-runforce*0.5,0)
     end
   end
   

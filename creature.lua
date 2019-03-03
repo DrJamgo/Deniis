@@ -105,7 +105,7 @@ function Creature:draw()
     if self.faceright == false then
       sx = -1
     end
-    love.graphics.draw(self.image, math.floor(self.body:getX()), math.floor(self.body:getY()),0,sx,1,ox,oy)
+    love.graphics.draw(self.image, math.floor(self.body:getX()+0.5), math.floor(self.body:getY()+0.5),0,sx,1,ox,oy)
   else
     local s = self.fixture:getShape()
     local b = self.fixture:getBody()
@@ -115,6 +115,8 @@ function Creature:draw()
       love.graphics.circle("line", b:getX(), b:getY(), s:getRadius())
     end
   end
+  
+  self.gothit = false
 end
 
 function Creature:getPosition()
@@ -125,5 +127,7 @@ function Creature:hit(damage)
   self.hp = self.hp - damage
   if self.hp <= 0 then
     self:die()
+  else
+    self.gothit = true
   end
 end
