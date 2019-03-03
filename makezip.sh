@@ -1,1 +1,1 @@
-zip -r Deniis.zip .
+zip -r Deniis.zip . -x *.git* -x *.rar*
