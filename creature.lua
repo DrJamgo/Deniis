@@ -14,7 +14,7 @@ function Creature:_preInit()
   -- this is a stub
 end
 
-function Creature:_init(world,x,y)
+function Creature:_init(world,x,y,properties)
   self:_preInit()
   self.body = self:_initBody(world, x, y)
   self.shape = self:_initShape(w, h)
@@ -23,6 +23,10 @@ function Creature:_init(world,x,y)
   self.imageorigin = {0,0}
   self.faceright = false
   self.sleep = true
+  self.properties = properties
+  for k,v in pairs(properties or {}) do
+    self[k] = v
+  end
   self:_postInit()
 end
 
@@ -79,8 +83,10 @@ function Creature:updateContacts(dt)
         
         self.enemycontact = {enemy=other:getUserData(), ny=ny, nx=nx}
       end
-      if ny > 0.1 then
+      if ny > 0.3 then
         groundobject = other
+        self.groundny = ny
+        self.groundnx = nx
       end
     end
     

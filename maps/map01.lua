@@ -9,7 +9,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 14,
-  nextobjectid = 82,
+  nextobjectid = 97,
   properties = {},
   tilesets = {},
   layers = {
@@ -98,7 +98,7 @@ return {
       type = "objectgroup",
       id = 1,
       name = "static",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -587,13 +587,178 @@ return {
             { x = 0, y = 0 },
             { x = 31.6667, y = -4.66667 },
             { x = 47.6667, y = -4.66667 },
-            { x = 69.7625, y = -4.60159 },
+            { x = 56.7625, y = -4.60159 },
             { x = 70.0303, y = 3.57576 },
             { x = 78.75, y = 3.66667 },
             { x = 111.667, y = -6 },
             { x = 190.667, y = -6 },
             { x = 190.667, y = 49.6667 },
             { x = -1, y = 50 }
+          },
+          properties = {}
+        },
+        {
+          id = 87,
+          name = "",
+          type = "",
+          shape = "polygon",
+          x = 1564.52,
+          y = 203.731,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 3.66667, y = -41.8333 },
+            { x = 25.2083, y = -53.25 },
+            { x = 50.5833, y = -45.375 },
+            { x = 67.6667, y = -37.3333 },
+            { x = 83.6667, y = -37.3333 },
+            { x = 99, y = -45 },
+            { x = 261, y = -45.3333 },
+            { x = 260.333, y = 50.6667 },
+            { x = -2.33333, y = 50.6667 }
+          },
+          properties = {}
+        },
+        {
+          id = 88,
+          name = "",
+          type = "",
+          shape = "polygon",
+          x = 1814.86,
+          y = 163.731,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 57.3333, y = -51.3333 },
+            { x = 88, y = -100 },
+            { x = 104.667, y = -110 },
+            { x = 136.667, y = -110.667 },
+            { x = 200.667, y = -100.667 },
+            { x = 232, y = -102 },
+            { x = 232.667, y = 92 },
+            { x = -2, y = 91.3333 }
+          },
+          properties = {
+            ["friction"] = 0
+          }
+        },
+        {
+          id = 90,
+          name = "",
+          type = "",
+          shape = "polygon",
+          x = 1807,
+          y = 110.667,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = -27.3333, y = -4.66667 },
+            { x = -70.3333, y = -19 },
+            { x = -63.3333, y = -32.6667 },
+            { x = -32.6667, y = -15.3333 },
+            { x = -13.6667, y = -17.6667 },
+            { x = -26, y = -12.3333 }
+          },
+          properties = {}
+        },
+        {
+          id = 91,
+          name = "",
+          type = "",
+          shape = "polygon",
+          x = 1741.33,
+          y = 35.6667,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = 3.33333, y = -16.3333 },
+            { x = 46, y = -11.3333 },
+            { x = 77.3333, y = -19.3333 },
+            { x = 47, y = -5 },
+            { x = 79.6667, y = -3 },
+            { x = 118.333, y = -5.66667 },
+            { x = 89.3333, y = 4.66667 },
+            { x = 63.3333, y = 4.33333 },
+            { x = 43, y = 2 }
+          },
+          properties = {}
+        },
+        {
+          id = 92,
+          name = "",
+          type = "",
+          shape = "polygon",
+          x = 1698.67,
+          y = 96.3333,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = -26.6667, y = 5.83333 },
+            { x = -80.0833, y = 13.8333 },
+            { x = -47.8333, y = 4.08333 },
+            { x = -64.6667, y = -5.66667 },
+            { x = -37, y = 1.33333 },
+            { x = -21.3333, y = -5.33333 },
+            { x = 7.33333, y = -15.3333 }
+          },
+          properties = {}
+        },
+        {
+          id = 93,
+          name = "",
+          type = "",
+          shape = "polygon",
+          x = 1710.67,
+          y = 28.6667,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polygon = {
+            { x = 0, y = 0 },
+            { x = -1, y = 15.3333 },
+            { x = -37.6667, y = 22 },
+            { x = -62.3333, y = 24.6667 },
+            { x = -29, y = 14 },
+            { x = -7, y = 5.66667 },
+            { x = -22.6667, y = 4 }
+          },
+          properties = {}
+        },
+        {
+          id = 94,
+          name = "",
+          type = "",
+          shape = "polygon",
+          x = 1708.75,
+          y = 6,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          polygon = {
+            { x = 1.875, y = 22.25 },
+            { x = -3.5, y = 43 },
+            { x = -15.25, y = 102.75 },
+            { x = 39.5, y = 104.25 },
+            { x = 34.75, y = 62.25 },
+            { x = 36.125, y = 13.25 },
+            { x = 5.25, y = 14.625 }
           },
           properties = {}
         }
@@ -608,15 +773,17 @@ return {
       offsetx = 0,
       offsety = 0,
       draworder = "topdown",
-      properties = {},
+      properties = {
+        ["collidable"] = true
+      },
       objects = {
         {
           id = 73,
           name = "",
           type = "",
           shape = "rectangle",
-          x = 765.804,
-          y = 23.3641,
+          x = 512.044,
+          y = 8.15577,
           width = 6.69697,
           height = 126.924,
           rotation = 0,
@@ -640,19 +807,6 @@ return {
       properties = {},
       objects = {
         {
-          id = 6,
-          name = "player",
-          type = "",
-          shape = "rectangle",
-          x = 1377.58,
-          y = 29.7497,
-          width = 16,
-          height = 24,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 30,
           name = "",
           type = "creatures/stachli",
@@ -670,13 +824,15 @@ return {
           name = "",
           type = "creatures/stachli",
           shape = "rectangle",
-          x = 1266,
-          y = 78,
+          x = 1168,
+          y = 66.5,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["faceright"] = true
+          }
         },
         {
           id = 66,
@@ -715,6 +871,36 @@ return {
           height = 0,
           rotation = 0,
           visible = true,
+          properties = {
+            ["faceright"] = true
+          }
+        },
+        {
+          id = 95,
+          name = "",
+          type = "creatures/stachli",
+          shape = "rectangle",
+          x = 1640,
+          y = 156,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["faceright"] = false
+          }
+        },
+        {
+          id = 96,
+          name = "player",
+          type = "",
+          shape = "rectangle",
+          x = 48,
+          y = 136,
+          width = 16,
+          height = 24,
+          rotation = 0,
+          visible = true,
           properties = {}
         }
       }
@@ -727,7 +913,7 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = -20,
-      image = "map01.png",
+      image = "map01a.png",
       properties = {}
     }
   }

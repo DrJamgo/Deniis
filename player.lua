@@ -75,16 +75,16 @@ function Player:update(dt)
   
   if self.onGround or self.inAir < 0.2 then
     if w and self.jump:activate() then
-      body:applyLinearImpulse(0,-jumpforce)
+      body:applyLinearImpulse(self.groundnx * -jumpforce / 2,self.groundny * -jumpforce)
     else
       if d and vx < self.maxspeed then
         body:applyForce(runforce,0)
-        body:setX(body:getX()-0.25)
+        body:setY(body:getY()-1)
         self.faceright = true
       end
       if a and vx > -self.maxspeed then
         body:applyForce(-runforce,0)
-        body:setX(body:getX()-0.25)
+        body:setY(body:getY()-1)
         self.faceright = false
       end
     end

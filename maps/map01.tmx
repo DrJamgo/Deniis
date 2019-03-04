@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="82">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="97">
  <imagelayer id="6" name="parallax3_1" offsetx="0" offsety="-20">
   <image source="../assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-back-trees.png" width="272" height="240"/>
   <properties>
@@ -36,9 +36,9 @@
   </properties>
  </imagelayer>
  <imagelayer id="12" name="parallax0" offsetx="0" offsety="-20">
-  <image source="map01b.png" width="1296" height="276"/>
+  <image source="map01b.png" width="2320" height="276"/>
  </imagelayer>
- <objectgroup color="#000000" id="1" name="static">
+ <objectgroup color="#000000" id="1" name="static" visible="0">
   <properties>
    <property name="collidable" type="bool" value="true"/>
   </properties>
@@ -104,11 +104,38 @@
    <polygon points="0,0 39.25,23.5 70.75,24.75 44.25,28 68.25,35.25 92,38.75 67,39.5 39.75,31 21.5,19.25 -1.5,12"/>
   </object>
   <object id="77" x="1376.33" y="205.333">
-   <polygon points="0,0 31.6667,-4.66667 47.6667,-4.66667 69.7625,-4.60159 70.0303,3.57576 78.75,3.66667 111.667,-6 190.667,-6 190.667,49.6667 -1,50"/>
+   <polygon points="0,0 31.6667,-4.66667 47.6667,-4.66667 56.7625,-4.60159 70.0303,3.57576 78.75,3.66667 111.667,-6 190.667,-6 190.667,49.6667 -1,50"/>
+  </object>
+  <object id="87" x="1564.52" y="203.731">
+   <polygon points="0,0 3.66667,-41.8333 25.2083,-53.25 50.5833,-45.375 67.6667,-37.3333 83.6667,-37.3333 99,-45 261,-45.3333 260.333,50.6667 -2.33333,50.6667"/>
+  </object>
+  <object id="88" x="1814.86" y="163.731">
+   <properties>
+    <property name="friction" type="float" value="0"/>
+   </properties>
+   <polygon points="0,0 57.3333,-51.3333 88,-100 104.667,-110 136.667,-110.667 200.667,-100.667 232,-102 232.667,92 -2,91.3333"/>
+  </object>
+  <object id="90" x="1807" y="110.667">
+   <polygon points="0,0 -27.3333,-4.66667 -70.3333,-19 -63.3333,-32.6667 -32.6667,-15.3333 -13.6667,-17.6667 -26,-12.3333"/>
+  </object>
+  <object id="91" x="1741.33" y="35.6667">
+   <polygon points="0,0 3.33333,-16.3333 46,-11.3333 77.3333,-19.3333 47,-5 79.6667,-3 118.333,-5.66667 89.3333,4.66667 63.3333,4.33333 43,2"/>
+  </object>
+  <object id="92" x="1698.67" y="96.3333">
+   <polygon points="0,0 -26.6667,5.83333 -80.0833,13.8333 -47.8333,4.08333 -64.6667,-5.66667 -37,1.33333 -21.3333,-5.33333 7.33333,-15.3333"/>
+  </object>
+  <object id="93" x="1710.67" y="28.6667">
+   <polygon points="0,0 -1,15.3333 -37.6667,22 -62.3333,24.6667 -29,14 -7,5.66667 -22.6667,4"/>
+  </object>
+  <object id="94" x="1708.75" y="6">
+   <polygon points="1.875,22.25 -3.5,43 -15.25,102.75 39.5,104.25 34.75,62.25 36.125,13.25 5.25,14.625"/>
   </object>
  </objectgroup>
  <objectgroup id="13" name="dynamic" visible="0">
-  <object id="73" x="765.804" y="23.3641" width="6.69697" height="126.924">
+  <properties>
+   <property name="collidable" type="bool" value="true"/>
+  </properties>
+  <object id="73" x="512.044" y="8.15577" width="6.69697" height="126.924">
    <properties>
     <property name="density" type="float" value="200"/>
     <property name="dynamic" type="bool" value="true"/>
@@ -116,14 +143,27 @@
   </object>
  </objectgroup>
  <objectgroup id="3" name="spawn">
-  <object id="6" name="player" x="1377.58" y="29.7497" width="16" height="24"/>
   <object id="30" type="creatures/stachli" x="830.667" y="132.833"/>
-  <object id="65" type="creatures/stachli" x="1266" y="78"/>
+  <object id="65" type="creatures/stachli" x="1168" y="66.5">
+   <properties>
+    <property name="faceright" type="bool" value="true"/>
+   </properties>
+  </object>
   <object id="66" type="creatures/stachli" x="1350.5" y="191.5"/>
   <object id="72" type="creatures/stachli" x="1354" y="58.25"/>
-  <object id="80" type="creatures/stachli" x="1456.91" y="198.97"/>
+  <object id="80" type="creatures/stachli" x="1456.91" y="198.97">
+   <properties>
+    <property name="faceright" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="95" type="creatures/stachli" x="1640" y="156">
+   <properties>
+    <property name="faceright" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="96" name="player" x="48" y="136" width="16" height="24"/>
  </objectgroup>
  <imagelayer id="9" name="map" offsetx="0" offsety="-20">
-  <image source="map01.png" width="1296" height="276"/>
+  <image source="map01a.png" width="2320" height="276"/>
  </imagelayer>
 </map>

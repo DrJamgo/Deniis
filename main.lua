@@ -41,7 +41,7 @@ function love.load()
     else
       local creature = require(object.type)
       if creature then
-        local c = creature(game.world, object.x + object.width / 2, object.y + object.height / 2)
+        local c = creature(game.world, object.x + object.width / 2, object.y + object.height / 2, object.properties)
       end
     end
   end
