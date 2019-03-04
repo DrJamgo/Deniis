@@ -32,9 +32,9 @@ end
 
 function Camera:setPosition(x, y)
   self.x = x
-  self.y = y
-  self.shiftX = math.floor(-x+0.5) + love.graphics.getWidth()/2 / self.scaleX
-  self.shiftY = math.floor(-y+0.5) + love.graphics.getHeight()/2 / self.scaleY
+  self.y = y - 16
+  self.shiftX = math.floor(-self.x+0.5) + love.graphics.getWidth()/2 / self.scaleX
+  self.shiftY = math.floor(-self.y+0.5) + love.graphics.getHeight()/2 / self.scaleY
   
   self.shiftX = math.max(math.min(self.shiftX, 0), -self.worldWidth + self.hfov)
   self.shiftY = math.max(math.min(self.shiftY, 0), - self.worldHeight + self.vfov)
