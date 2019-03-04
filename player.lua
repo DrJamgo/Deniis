@@ -79,12 +79,12 @@ function Player:update(dt)
     else
       if d and vx < self.maxspeed then
         body:applyForce(runforce,0)
-        body:setY(body:getY()-1)
+        body:setY(body:getY()-0.25)
         self.faceright = true
       end
       if a and vx > -self.maxspeed then
         body:applyForce(-runforce,0)
-        body:setY(body:getY()-1)
+        body:setY(body:getY()-0.25)
         self.faceright = false
       end
     end
