@@ -14,6 +14,7 @@ game.camera = Camera()
 game.map = nil
 game.player = nil
 game.hud = HUD(game)
+game.time = 0
 
 local box2d_draw = false
 local pause = false
@@ -28,7 +29,7 @@ function love.load()
   
   game.world:setCallbacks(beginContact, endContact, preSolve, postSolve)
 
-  game.map = sti("map01.lua", { "box2d" })
+  game.map = sti("maps/map01.lua", { "box2d" })
   game.map:box2d_init(game.world)
   
   local spawnlayer = game.map.layers["spawn"]
@@ -40,7 +41,7 @@ function love.load()
     else
       local creature = require(object.type)
       if creature then
-        creature(game.world, object.x + object.width / 2, object.y + object.height / 2)
+        local c = creature(game.world, object.x + object.width / 2, object.y + object.height / 2)
       end
     end
   end
@@ -52,23 +53,29 @@ function love.load()
 end
 
 function love.update(dt)
-  local dt = math.min(dt, 100)
-  
-  
-  if pause then return end
-  updateFixtures(dt)
-  game.map:update(dt)
-  game.world:update(dt)
-  game.camera:update(dt)
-  game.hud:update(dt)
-  
-  for k, layer in pairs(game.map.layers) do
-    if layer.properties.offsetx then
-      layer.x = layer.properties.offsetx * -game.camera.shiftX + layer.offsetx
+  if game.player.body:getX() >= game.map.width * game.map.tilewidth or game.player.body:getX() < 0 then
+    game.finaltime = game.time
+  else
+    local dt = math.min(dt, 100)
+    
+    
+    if pause then return end
+    updateFixtures(dt)
+    game.map:update(dt)
+    game.world:update(dt)
+    game.camera:update(dt)
+    game.hud:update(dt)
+    
+    for k, layer in pairs(game.map.layers) do
+      if layer.properties.offsetx then
+        layer.x = layer.properties.offsetx * -game.camera.shiftX + layer.offsetx
+      end
+      if layer.properties.offsety then
+        layer.y = layer.properties.offsety * -game.camera.shiftY + layer.offsety
+      end
     end
-    if layer.properties.offsety then
-      layer.y = layer.properties.offsety * -game.camera.shiftY + layer.offsety
-    end
+    
+    game.time = game.time + dt
   end
 end
 
@@ -133,6 +140,8 @@ function love.draw()
   game.hud:draw()
   
   love.graphics.replaceTransform(camera:getTransform())
+  
+  
 end
 
 function love.mousepressed(x, y, button, istouch)

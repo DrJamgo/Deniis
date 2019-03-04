@@ -17,6 +17,7 @@ function Creature:_init(world,x,y,w,h,m,hp)
   self.hp = hp or 10
   self.imageorigin = {0,0}
   self.faceright = false
+  self.sleep = true
 end
 
 function Creature:_initBody(world, x, y)
@@ -88,8 +89,9 @@ end
 
 function Creature:update(dt)
   self:updateContacts(dt)
-  if game.camera:isVisible(self.body:getX(), self.body:getY(), 0,0) then
+  if self.sleep == false or game.camera:isVisible(self.body:getX(), self.body:getY(), 0,0) then
     self:_updateBehaviour(dt)
+    self.sleep = false
   end
 end
 

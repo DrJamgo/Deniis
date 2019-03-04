@@ -24,6 +24,9 @@ function updateFixtures(dt)
   local bodies = game.world:getBodies()
   for i, body in pairs(bodies) do
     local fixtures = body:getFixtures()
+    if #fixtures == 0 then
+      body:destroy()
+    end
     for k, fixture in pairs(fixtures) do  
       local userdata = fixture:getUserData()
       if userdata and userdata.update then

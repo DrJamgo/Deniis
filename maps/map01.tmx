@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="128" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="82">
+ <imagelayer id="6" name="parallax3_1" offsetx="0" offsety="-20">
+  <image source="../assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-back-trees.png" width="272" height="240"/>
+  <properties>
+   <property name="offsetx" type="float" value="0.97"/>
+   <property name="offsety" type="float" value="0.97"/>
+  </properties>
+ </imagelayer>
+ <imagelayer id="8" name="parallax2_1" offsetx="0" offsety="-20">
+  <image source="../assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-middle-trees.png" width="272" height="240"/>
+  <properties>
+   <property name="offsetx" type="float" value="0.8"/>
+   <property name="offsety" type="float" value="0.95"/>
+  </properties>
+ </imagelayer>
+ <imagelayer id="11" name="parallax2_2" offsetx="272" offsety="-20">
+  <image source="../assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-middle-trees.png" width="272" height="240"/>
+  <properties>
+   <property name="offsetx" type="float" value="0.8"/>
+   <property name="offsety" type="float" value="0.95"/>
+  </properties>
+ </imagelayer>
+ <imagelayer id="7" name="parallax1_1" offsetx="0" offsety="-20">
+  <image source="../assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-front-trees.png" width="272" height="240"/>
+  <properties>
+   <property name="offsetx" type="float" value="0.6"/>
+   <property name="offsety" type="float" value="0.9"/>
+  </properties>
+ </imagelayer>
+ <imagelayer id="10" name="parallax1_2" offsetx="272" offsety="-20">
+  <image source="../assets/parallax_forest_pack/parallax_forest_pack/layers/parallax-forest-front-trees.png" width="272" height="240"/>
+  <properties>
+   <property name="offsetx" type="float" value="0.6"/>
+   <property name="offsety" type="float" value="0.9"/>
+  </properties>
+ </imagelayer>
+ <imagelayer id="12" name="parallax0" offsetx="0" offsety="-20">
+  <image source="map01b.png" width="1296" height="276"/>
+ </imagelayer>
+ <objectgroup color="#000000" id="1" name="static">
+  <properties>
+   <property name="collidable" type="bool" value="true"/>
+  </properties>
+  <object id="17" x="0.333333" y="62.25" width="31.3333" height="194.167">
+   <properties>
+    <property name="friction" type="float" value="0.2"/>
+   </properties>
+  </object>
+  <object id="24" x="281.746" y="105.481" width="121.188" height="20.3333" rotation="5.49047"/>
+  <object id="34" x="31.6667" y="160">
+   <polygon points="0,0 48,0 53.3333,3 53.6667,16.3333 57.6667,26 67,31.6667 116,31.6667 127.667,30.3333 142.667,25.3333 151.333,22 161.333,16.3333 169.333,12.3333 183.697,3.87878 195.818,-1.75758 205.667,-2.33333 209.333,-0.333333 214,0.666667 219.667,0.666667 231.333,1 239.333,-8 239.667,-31.3333 272.333,-32 272.667,96.3333 -0.333333,96.3333"/>
+  </object>
+  <object id="42" x="608.182" y="127.636">
+   <polygon points="0,0 16.3636,-0.181818 46.1818,-3.09091 64.3636,-4.72727 90.8182,-2.09091 158.273,15.7045 239.205,16.0227 317.948,-2.1608 320.252,-13.6368 347.033,-17.7981 356.661,-1.26003 415.807,64.3752 415.985,127.614 -9.18182,127.864"/>
+  </object>
+  <object id="44" x="522" y="136.421">
+   <polygon points="-10.303,-17 -10.4015,-1.24067 -2.87491,-1.28612 -2.81215,-3.89843 31.1667,-1.17087 22.25,54.0069 15.25,119.217 -137.5,120.079 -138,0.287271"/>
+  </object>
+  <object id="45" x="750.75" y="96.25">
+   <polygon points="-2.25,-2.25 41.75,-2.75 79.5,-10.75 100.25,-17 100,-29.5 73,-17.75 55,-12.75 26.5,-22 49.5,-8.75 28.5,-6.75"/>
+  </object>
+  <object id="46" x="384.333" y="78.6667">
+   <polygon points="0,0 37,4.66667 63.3333,5.66667 63.3333,-6 30.6667,-2 17,-16.6667 25.3333,-2"/>
+  </object>
+  <object id="48" x="851" y="0.166667" width="35.8333" height="79.8333"/>
+  <object id="51" x="31" y="111.5">
+   <polygon points="0,0 58,-10 93.5,-20 131,-37 58,-16 78.5,-33.5 42,-14 -2,-12"/>
+  </object>
+  <object id="55" x="1024" y="192.333">
+   <polygon points="-0.0078125,-0.328125 47.942,-0.26087 96,-15.6667 143.333,-16 176.667,-0.333333 288.25,-0.402966 351.792,13.375 352.03,63.4848 0.5,62.6667"/>
+  </object>
+  <object id="58" x="1128.67" y="125.333">
+   <polygon points="0,0 -37,10 -47.6667,28.3333 -42,10 -78.3939,12.7576 -31.0606,3.42424 2.66667,-8"/>
+  </object>
+  <object id="60" x="1149.67" y="93">
+   <polygon points="0,0 21.3333,-3.33333 66,6 102,20.3333 81.6667,7.66667 134.667,1.42109e-14 75.3333,-1.66667 0,-18.6667"/>
+  </object>
+  <object id="62" x="1359.5" y="198.5">
+   <polygon points="-0.25,10 4.5,-99.5 4.5,-137.5 17,-134.5 32.1818,-141.364 34.5,-61.5 38.5,10.25"/>
+  </object>
+  <object id="63" x="1367.33" y="121.667">
+   <polygon points="0,0 -11.303,7.90909 -49.2803,2.16667 -19.2652,12.5682 -67.3333,34.3333 0.5,13.9167"/>
+  </object>
+  <object id="64" x="1371" y="72">
+   <polygon points="-2,9.27273 -52.6667,-10.3333 -2,-0.151515"/>
+  </object>
+  <object id="67" x="1084.33" y="78.3333">
+   <polygon points="30.3333,13.6667 50.3333,7 48.6667,15 26,17.6667 -4.66667,20.9167 16.3333,15.3333"/>
+  </object>
+  <object id="68" x="1132.17" y="45.8333">
+   <polygon points="0,0 -30.9167,13.3333 2.25,6.75"/>
+  </object>
+  <object id="69" x="884.75" y="77.5">
+   <polygon points="0,0 24.75,3 50.25,0.75 76.25,-9.25 48.25,-4 30,-3 38,-12.75 21.75,-4 -2.75,-11.5"/>
+  </object>
+  <object id="70" x="1149.67" y="36.0833">
+   <polygon points="0,0 16.75,8.75 52.4167,18.6667 21.75,6.75 36.5,3.41667 16,3.41667 0.75,-7.75"/>
+  </object>
+  <object id="71" x="1131" y="0.96686">
+   <polygon points="0,0 0.333333,80.5717 -4.66667,137.616 29,137.616 23.6667,87.9843 20.6667,11.9246 20.6667,-0.96686"/>
+  </object>
+  <object id="75" x="1389.5" y="98.5">
+   <polygon points="0,0 39.25,23.5 70.75,24.75 44.25,28 68.25,35.25 92,38.75 67,39.5 39.75,31 21.5,19.25 -1.5,12"/>
+  </object>
+  <object id="77" x="1376.33" y="205.333">
+   <polygon points="0,0 31.6667,-4.66667 47.6667,-4.66667 69.7625,-4.60159 70.0303,3.57576 78.75,3.66667 111.667,-6 190.667,-6 190.667,49.6667 -1,50"/>
+  </object>
+ </objectgroup>
+ <objectgroup id="13" name="dynamic" visible="0">
+  <object id="73" x="765.804" y="23.3641" width="6.69697" height="126.924">
+   <properties>
+    <property name="density" type="float" value="200"/>
+    <property name="dynamic" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="3" name="spawn">
+  <object id="6" name="player" x="1377.58" y="29.7497" width="16" height="24"/>
+  <object id="30" type="creatures/stachli" x="830.667" y="132.833"/>
+  <object id="65" type="creatures/stachli" x="1266" y="78"/>
+  <object id="66" type="creatures/stachli" x="1350.5" y="191.5"/>
+  <object id="72" type="creatures/stachli" x="1354" y="58.25"/>
+  <object id="80" type="creatures/stachli" x="1456.91" y="198.97"/>
+ </objectgroup>
+ <imagelayer id="9" name="map" offsetx="0" offsety="-20">
+  <image source="map01.png" width="1296" height="276"/>
+ </imagelayer>
+</map>
