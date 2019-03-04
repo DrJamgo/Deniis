@@ -10,14 +10,20 @@ setmetatable(Creature, {
   end,
 })
 
-function Creature:_init(world,x,y,w,h,m,hp)
+function Creature:_preInit()
+  -- this is a stub
+end
+
+function Creature:_init(world,x,y)
+  self:_preInit()
   self.body = self:_initBody(world, x, y)
   self.shape = self:_initShape(w, h)
   self.fixture = self:_initFixture()
-  self.hp = hp or 10
+  self.hp = self.hpmax or 10
   self.imageorigin = {0,0}
   self.faceright = false
   self.sleep = true
+  self:_postInit()
 end
 
 function Creature:_initBody(world, x, y)
@@ -27,20 +33,24 @@ function Creature:_initBody(world, x, y)
   return body
 end
 
-function Creature:_initShape(w, h)
-  return love.physics.newRectangleShape(w, h)
+function Creature:_initShape()
+  return love.physics.newRectangleShape(16, 16)
 end
 
-function Creature:_initFixture(m)
+function Creature:_initFixture()
   local fixture = love.physics.newFixture( self.body, self.shape, 1 )
   fixture:setRestitution(0)
   fixture:setFriction(0.2)
   
-  self.body:setMass(m or 80)
+  self.body:setMass(self.mass or 80)
   
   fixture:setUserData(self)
   fixture:setFilterData(Cat.creature, Cat.all, Group.enemy)
   return fixture
+end
+
+function Creature:_postInit()
+  -- this is a stub
 end
 
 function Creature:die()

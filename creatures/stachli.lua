@@ -16,17 +16,17 @@ Stachli.impulse = 8000
 Stachli.hp = 100
 Stachli.mass = 70
 
-function Stachli:_init(world,x,y)
-  Creature._init(self, world, x, y, 16, 8, Stachli.mass, Stachli.hp)
+function Stachli:_initShape()
+  local w,h = 16, 8
+  return love.physics.newPolygonShape(-w/2, 0, -w/4, -h, w/4, -h, w/2, 0)
+end
+
+function Creature:_postInit()
   self.fixture:setFriction(0.6)
   self.image = love.graphics.newImage("assets/stachli.png")
   self.imageorigin = {8, 14}
   self.bounce = Ability(0.5)
   self.sting = Ability(0.5)
-end
-
-function Stachli:_initShape(w, h)
-  return love.physics.newPolygonShape(-w/2, 0, -w/4, -h, w/4, -h, w/2, 0)
 end
 
 function Stachli:_updateBehaviour(dt)

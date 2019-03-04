@@ -17,10 +17,10 @@ setmetatable(Player, {
   end,
 })
 
-Player.hp = 100
+Player.hpmax = 100
+Player.mass = 70
 
-function Player:_init(world,x,y)
-  Creature._init(self, world, x, y, 10, 24, 70, Player.hp)
+function Player:_postInit()
   self.fixture:setGroupIndex(Group.player)
   self.fixture:setFriction(0.4)
   
@@ -42,6 +42,10 @@ function Player:_init(world,x,y)
   self.faceright = true
   
   self.quadindex = 0
+end
+
+function Creature:_initShape()
+  return love.physics.newRectangleShape(10, 24)
 end
 
 function Player:beginContact(fixture, other, collision)
